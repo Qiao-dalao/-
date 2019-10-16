@@ -19,8 +19,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/robgolb',require('./routes/robgolb'))
-app.use('/', indexRouter);
+//渲染界面路由
+app.get('/coupons',require('./routes/coupons'))	//领券中心
+app.get('/robgolb',require('./routes/robgolb'))	//抢金币
+app.get('/golbsign',require('./reouts/golbsign'))	//金币签到
+app.use('/', indexRouter);	//主页
 
 
 // catch 404 and forward to error handler
