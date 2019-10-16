@@ -3,3 +3,4 @@ function robgolb(req,res){
 		
 	})
 }
+module.exports = robgolb
