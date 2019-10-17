@@ -20,6 +20,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //渲染界面路由
+app.get('/items',require('./routes/items'))	//超级单品
+app.get('/classes',require('./routes/classes'))	//超级品类
+app.get('/brands',require('./routes/brands'))	//超级品牌
 app.get('/coupons',require('./routes/coupons'))	//领券中心
 app.get('/robgolb',require('./routes/robgolb'))	//抢金币
 app.get('/golbsign',require('./routes/golbsign'))	//金币签到
