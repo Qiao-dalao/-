@@ -8,6 +8,37 @@
 	display: flex;
 	justify-content: space-between;
 }
+.index-list-two{
+	width: 80%;
+	margin: 0 auto;
+	height: 40px;
+}
+.index-list-two *{
+	height: 100%;
+	line-height: 40px;
+}
+.index-list{
+	position: absolute;
+	margin-left: 20px;
+}
+.index-list li{
+	margin-left:10px;
+	color: #aaa;
+	font-size: 14px;
+	
+}
+.index-all{
+	width: 140px;
+	float:left;
+	margin-left:20px;
+	text-align: center;
+	color: white;
+	background: #ff4040;
+}
+.index-list li:hover{
+	color: #333;
+	cursor: pointer;
+}
 .shopcar{
 	width: 122px;
 	height: 20px;
@@ -29,7 +60,17 @@
 	border-radius: 100px;
 	outline: none;
 	margin-right: 20px;
+	background:#FCFCFC ;
 }
+
 .index-search:hover{
 	border: 1px solid #ff4040;
+	background: white;
+}
+.index-list-two-ul{
+	float: left;
+}
+.index-list-two-ul li{
+	float: left;
+	margin-left: 40px;
 }
