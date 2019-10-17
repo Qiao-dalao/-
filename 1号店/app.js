@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //渲染界面路由
 app.get('/coupons',require('./routes/coupons'))	//领券中心
 app.get('/robgolb',require('./routes/robgolb'))	//抢金币
-app.get('/golbsign',require('./reouts/golbsign'))	//金币签到
+app.get('/golbsign',require('./routes/golbsign'))	//金币签到
 app.use('/', indexRouter);	//主页
 
 
