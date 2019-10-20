@@ -35,7 +35,7 @@ app.get('/brands',require('./routes/brands'))	//超级品牌
 app.get('/coupons',require('./routes/coupons'))	//领券中心
 app.get('/robgolb',require('./routes/robgolb'))	//抢金币
 app.get('/golbsign',require('./routes/golbsign'))	//金币签到
-app.get('/login',require('./routes/login'))		//登录
+//app.get('/login',require('./routes/login'))		//登录
 app.use('/', indexRouter);	//主页
 
 //功能路由
