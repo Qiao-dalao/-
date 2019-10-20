@@ -1,6 +1,7 @@
 <% include base/head.ejs %>
 <% include base/nav-coupons.ejs %>
 <link rel="stylesheet" href="/stylesheets/rong/coupons.css">
+
 <div class="index">
 	<div class="index-top">
 		<div>
@@ -53,21 +54,26 @@
 </div>
 
 <div class="content">
-    <div class="content-quan">
-        <div class="content-quan-kuang">
-            <img src="/images/rong/niunai.jpg" alt="" class="niunai">
-        </div>
-        <div class="neirong">
-            <em class="fuhao">￥</em>
-            <span class="price">5</span>
-            <i class="manjianquan">满减券</i>
-            <p class="condition">满110元可用</p>
-            <span class="tips">仅可购买部分牛奶商品</span>
-        </div>
-        <div class="lingqukuang">
-            <span class="text">免费领取</span>
-        </div>
-    </div>
+    <div class="content-main">
+		<% for(i=0;i<result.length;i++){ %>
+		<div class="content-quan">
+		    <div class="content-quan-kuang">
+		        <img src="/images/rong/niunai.jpg" alt="" class="niunai">
+		    </div>
+		    <div class="neirong">
+		        <em class="fuhao">￥</em>
+		        <span class="price"><%= result[i].price %></span>
+		        <i class="manjianquan"><%= result[i].manjianquan %></i>
+		        <p class="condition">满<%= result[i].manduoshao %>元可用</p>
+		        <span class="tips" title="<%= result[i].limit %>"><%= result[i].limit %></span>
+		    </div>
+		    <div class="lingqukuang">
+		        <span class="text"><%= result[i].way %></span>
+		    </div>
+		</div>
+		<% } %>
+		
+	</div>
     <p style="color: #333;font-size: 12px;text-align: center;margin-top: 50px;">到底了，没有更多好券了</p>
     <img src="/images/rong/biankuang.png" alt="" class="biankuang">
 
@@ -87,5 +93,8 @@
     <div style="height: 20px;"></div>
 </div> 
 
+
+<script src="/javascripts/rong/coupons.js"></script>
 <% include base/copyright.ejs %>
 <% include base/foot.ejs %>
+

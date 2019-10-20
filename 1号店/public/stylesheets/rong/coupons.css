@@ -135,15 +135,23 @@
 .content{
     background: #f0f0f0;
     width: 100%;
+	
 }
+.content-main{
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
 .content-quan{
-    width: 350px;
+    width: 28.5%;
     height: 156px;
     background: #fff;
-    margin-left: 158px;
     position: relative;
-    top:18px;
     border-radius: 5px;
+	margin-top: 20px;
 }
 .content-quan-kuang{
     width: 100px;
@@ -193,6 +201,7 @@
     font-size: 12px;
 }
 .tips{
+	width: 130px;
     display: inline-block;
     overflow: hidden;
     color: #999;
