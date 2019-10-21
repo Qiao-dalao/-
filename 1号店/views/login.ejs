@@ -1,6 +1,7 @@
 <% include base/head.ejs %>
 <link rel="stylesheet" href="/stylesheets/rong/login.css">
-
+<!-- <script src="/javascripts/nav/showUser.js"></script> -->
+<form>
 <div class="regist_header clearfix">
     <div class="wrap">
         <img class="login" src="/images/rong/loginlogo.jpg" height="55" alt="1号店">
@@ -20,7 +21,7 @@
             </div>
             <span class="fr">
                  您好，欢迎光临1号店！
-                <a href="" class="blue_link" style="text-decoration:none;">请登录</a>
+                <a href="/login" class="blue_link" style="text-decoration:none;">请登录</a>
             </span> 
            
         </div>
@@ -39,11 +40,11 @@
                     <div class="form_item_wrap">
                         <div class="form_item cur">
                             <img src="/images/rong/yonghu.png" alt="" style="width: 18px;margin-top: 3px;">
-                            <input type="text" name="" placeholder="邮箱/手机/用户名" class="ipt ipt_username gay_text" style="outline-style: none;"> 
+                            <input type="text" name="username" placeholder="邮箱/手机/用户名" class="ipt ipt_username gay_text" style="outline-style: none;"> 
                         </div>
                         <div class="form_item">
                                 <img src="/images/rong/mima.png" alt="" style="width: 20px;margin-top: 3px;">
-                            <input type="password" name="" placeholder="密码" class="ipt ipt_password gay_text" style="outline-style: none;">
+                            <input type="password" name="password" placeholder="密码" class="ipt ipt_password gay_text" style="outline-style: none;">
                         </div>
                         <div class="auto_login clearfix">    
                             <!-- <p class="uncheck_agreement"> 
@@ -51,7 +52,7 @@
                                 自动登录
                             </p>  
                             <p class="forget_pswd">忘记密码？</p> -->
-                            <button type="button" class="login_btn">登录</button>
+                            <button type="submit" class="login_btn">登录</button>
                         </div>
                     </div>
                     <div class="joint_landing_wrap">
@@ -93,6 +94,8 @@
     <a target="_blank">营业执照</a>
     <p>Copyright © 1号店网上超市 2007-2018，All Rights Reserved</p>
 </div>
+</form>
 
 <script src="/javascripts/rong/login.js"></script>
+<script src="/javascripts/ajax/login.js"></script>
 <% include base/foot.ejs %>
