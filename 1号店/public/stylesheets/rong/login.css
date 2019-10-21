@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font: 12px Arial,Helvetica,sans-serif;
+    color: #333;
+    background: rgb(252, 252, 252);
+}
+body, p, form, input, button, dl, dt, dd, ul, ol, li, h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.regist_header{
+    padding: 16px;
+    background: #FFF;
+    border: 1px solid #e1e1e1;
+}
+.clearfix:after{
+    display: block;
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+}
+.regist_header .wrap{
+    width: 1200px;
+}
+.wrap{
+    width: 980px;
+    margin: 0 auto;
+}
+img{
+    border: 0 none;
+    vertical-align: top;
+}
+.regist_header_right{
+    float: right;
+    line-height: 18px;
+    font-family: "SimSun";
+    color: #999;
+}
+.fr{
+    float: right;
+}
+.blue_link {
+    color: #06c;
+}
+.blue_link:hover{
+    color: #ff3c3c;
+}
+.help_wrap{
+    position: relative;
+    z-index: 1010;
+    float: right;
+    margin-left: 25px;
+    padding: 0px 6px;
+   height: 30px;
+    color: #333;
+    cursor: pointer;
+}
+.help_wrap span:hover{
+    color: #ff3c3c;
+}
+.hd_menu_list {
+    display: none;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    right: 0;
+    width: 98px;
+    padding-top: 20px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+.hd_menu_list li{
+    border-top:1px solid rgb(243, 243, 243);
+    padding-top: 2px;
+    height: 25px;
+    line-height: 25px;
+}
+.hd_menu_list li:hover{
+    color: #ff3c3c;
+}
+
+
+
+
+.login_wrap {
+    padding: 26px 0px 0px;
+}
+.mod_left_banner {
+    margin-top: 45px;
+    width: 510px;
+    height: 315px;
+    float: left;
+}
+.mod_left_banner img{
+    width: 510px;
+    height: 315px;
+}
+.mod_login_wrap {
+    position: relative;
+    float: right;
+    width: 330px;
+    padding: 45px 35px 0 35px;
+    background-color: #fff;
+}
+.mod_login_wrap h3 {
+    float: left;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    line-height: 30px;
+}
+.regist_new {
+    float: right;
+    line-height: 30px;
+}
+input{
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+.mod_login_wrap .form_item_wrap {
+    width: 330px;
+    margin: 0 auto;
+}
+.mod_login_wrap .form_item_wrap .cur {
+    z-index: 101;
+    border: 1px solid #aaa;
+}
+.mod_login_wrap .form_item_wrap .form_item {
+    position: relative;
+    z-index: 100;
+    height: 24px;
+    margin-bottom: 10px;
+    padding: 14px 18px;
+    border: 1px solid #dedede;
+    background: #FFF;
+    line-height: 24px;
+}
+.mod_login_wrap .form_item_wrap .form_item .gay_text {
+    color: #ccc;
+}
+.mod_login_wrap .form_item_wrap .form_item .ipt {
+    width: 230px;
+    height: 24px;
+    padding-left: 3px;
+    border: 0 none;
+    line-height: 24px;
+    vertical-align: middle;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    color: #333;
+}
+.auto_login {
+    position: relative;
+    margin: 10px 0;
+    line-height: 24px;
+    min-height: 24px;
+}
+
+/* .uncheck_agreement {
+    float: left;
+    padding-left: 18px;
+    color: #999;
+    cursor: pointer;
+}
+
+.forget_pswd {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #999;
+    cursor: pointer;
+} */
+
+.login_btn {
+    width: 330px;
+    height: 52px;
+    border: 0 none;
+    border-radius: 3px;
+    background: #ff3c3c;
+    font-size: 16px;
+    color: #FFF;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #ff7373;
+    font-family: "Microsoft YaHei";
+    line-height: 52px;
+    margin-top: 5px;
+}
+.joint_landing_wrap {
+    position: relative;
+    z-index: 10;
+}
+.joint_landing_wrap p {
+    /* padding: 15px 0; */
+    color: #666;
+}
+.account_list {
+    float: left;
+    width: 230px;
+}
+.account_list li {
+    float: left;
+    margin: 0 20px 0 0;
+    padding-top: 10px;
+    cursor: pointer;
+}
+.unfold {
+    float: right;
+    display: block;
+    line-height: 34px;
+    color: #999;
+    padding-top: 10px;
+}
+#simplefooter {
+    width: 980px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+#simplefooter a {
+    margin: 0 8px;
+    color: #333;
+}
+#simplefooter a:hover {
+    cursor: pointer;
+    color: #ff3c3c;
+}
+#simplefooter p {
+    margin-top: 10px;
+    color: #333;
+}
