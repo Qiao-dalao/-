@@ -88,23 +88,27 @@
                 <li class="quanbu" style="color: #333;font-weight: 400;">手机数码</li>
             </ul>
         </div>    
-        <div class="xiangqing">
-            <img src="/images/han/dianzi.jpg" alt="">
-            <div class="desc">
-                <p class="name">康尔 KingCamp 户外垫子睡垫防潮垫防污防水 露营野餐休闲防滑垫 超轻便携 210*200cm KG9001 彩虹条纹</p>
-                <span class="price">89.0</span>
-                <span style="float:left;margin-left: 5px;margin-top:15px;color:#333;font-size:12px;cursor: pointer;">+</span>
-                <span style="float:left;margin-left:3px;margin-top:13px;color:#cab28c;font-weight:600;cursor: pointer;">10</span>
-                <span style="float:left;margin-left: 5px;margin-top:15px;color:#333;font-size:12px;cursor: pointer;">金币</span>
-                <img style="float: left;margin-left:4px;margin-top:10px;cursor: pointer;" src="/images/han/sheng.png" alt="">
-                <div class="yuanjia">
-                    <span style="text-decoration: line-through;color: #999999;font-size:10px;float:left;margin-left:10px;">￥118</span>
-                    <div class="buy">
-                        <img width="50%" style="margin-top: 3px;" src="/images/han/shoppingcar.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+		<div class="xiangqing-main">
+			<% for(var i=0;i<result.length;i++){ %>
+			<div class="xiangqing">
+			    <img src=<%= result[i].img %> alt="">
+			    <div class="desc">
+			        <p class="name"><%= result[i].miaoshu %></p>
+			        <span class="price"><%= result[i].price %></span>
+			        <span style="float:left;margin-left: 5px;margin-top:15px;color:#333;font-size:12px;cursor: pointer;">+</span>
+			        <span style="float:left;margin-left:3px;margin-top:13px;color:#cab28c;font-weight:600;cursor: pointer;"><%= result[i].golb %></span>
+			        <span style="float:left;margin-left: 5px;margin-top:15px;color:#333;font-size:12px;cursor: pointer;">金币</span>
+			        <div class="yuanjia">
+			            <span style="text-decoration: line-through;color: #999999;font-size:10px;float:left;margin-left:10px;">￥<%= result[i].oldprice %></span>
+			            <div class="buy">
+			                <img width="50%" style="margin-top: 3px;" src="/images/han/shoppingcar.png" alt="">
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<% } %>
+		</div>
+        
         
     </div>
 </div>
