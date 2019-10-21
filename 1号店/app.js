@@ -35,12 +35,9 @@ app.get('/brands',require('./routes/brands'))	//超级品牌
 app.get('/coupons',require('./routes/coupons'))	//领券中心
 app.get('/robgolb',require('./routes/robgolb'))	//抢金币
 app.get('/golbsign',require('./routes/golbsign'))	//金币签到
-<<<<<<< HEAD
 app.get('/login',require('./routes/login'))		//登录
 app.get('/register',require('./routes/register'))	//注册
-=======
-//app.get('/login',require('./routes/login'))		//登录
->>>>>>> 179d61e4084e5228c2768432bea83b2e01233ae8
+app.get('/login',require('./routes/login'))		//登录
 app.use('/', indexRouter);	//主页
 
 //功能路由
