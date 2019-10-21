@@ -1,7 +1,18 @@
 <% include base/head.ejs %>
 <% include base/nav-coupons.ejs %>
 <link rel="stylesheet" href="/stylesheets/rong/coupons.css">
-
+<style>
+.listmain{
+	display:none;
+	
+}
+.list{
+	text-align:center;
+}
+.content>div:first-child{
+	display:flex;
+}
+</style>
 <div class="index">
 	<div class="index-top">
 		<div>
@@ -36,7 +47,7 @@
     <div class="nav-center-top">
         <ul class="nav-center-top-nav">
 			<% for(var i=0;i<data.length;i++){ %>
-            <li><%= data[i].couponslist %></li>
+            <li class="list"><%= data[i].couponslist %></li>
             
             <% } %>
         </ul>
@@ -46,21 +57,22 @@
 </div>
 
 <div class="content">
-    <div class="content-main">
-		<% for(var i=0;i<result.length;i++){ %>
+	<% for(var j=0;j<data.length;j++){ %>
+    <div class="content-main listmain">
+		<% for(var i=0;i<data[j].list.length;i++){ %>
 		<div class="content-quan">
 		    <div class="content-quan-kuang">
 		        <img src="/images/rong/niunai.jpg" alt="" class="niunai">
 		    </div>
 		    <div class="neirong">
 		        <em class="fuhao">￥</em>
-		        <span class="price"><%= result[i].price %></span>
-		        <i class="manjianquan"><%= result[i].manjianquan %></i>
-		        <p class="condition">满<%= result[i].manduoshao %>元可用</p>
-		        <span class="tips" title="<%= result[i].limit %>"><%= result[i].limit %></span>
+		        <span class="price"><%= data[j].list[i].price %></span>
+		        <i class="manjianquan"><%= data[j].list[i].manjianquan %></i>
+		        <p class="condition">满<%= data[j].list[i].manduoshao %>元可用</p>
+		        <span class="tips" title="<%= data[j].list[i].limit %>"><%= data[j].list[i].limit %></span>
 		    </div>
 		    <div class="lingqukuang">
-		        <span class="text"><%= result[i].way %></span>
+		        <span class="text"><%= data[j].list[i].way %></span>
 		    </div>
 		</div>
 		<% } %>
@@ -88,6 +100,26 @@
 
 
 <script src="/javascripts/rong/coupons.js"></script>
+<script>
+var list = document.querySelectorAll('.list')
+var listmain = document.querySelectorAll('.listmain')
+for(var i=0;i<list.length;i++){
+	list[i].index = i
+	list[i].onclick=function(){
+		for(var j=0;j<listmain.length;j++){
+			listmain[j].style.display='none';
+			list[j].style.fontWeight='normal';
+			list[j].style.background="white";
+			list[j].style.color='black';
+			
+		}
+		this.style.background="#ff3f3f";
+		this.style.fontWeight='bolder';
+		this.style.color='white';
+		listmain[this.index].style.display='flex'
+	}
+}
+</script>
 <% include base/copyright.ejs %>
 <% include base/foot.ejs %>
 
