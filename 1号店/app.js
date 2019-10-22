@@ -38,6 +38,11 @@ app.get('/golbsign',require('./routes/golbsign'))	//金币签到
 
 app.get('/login',require('./routes/login'))		//登录
 app.get('/register',require('./routes/register'))	//注册
+app.get('/login',require('./routes/login'))		//登录
+
+
+app.get('/login',require('./routes/login'))		//登录
+app.get('/register',require('./routes/register'))	//注册
 
 
 app.use('/', indexRouter);	//主页

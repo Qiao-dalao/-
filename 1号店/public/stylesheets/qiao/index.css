@@ -89,6 +89,5 @@
 .index-red-bj>ul:first-child>li{
 	width: 20%;
 	height: 216px;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 }
-.index
