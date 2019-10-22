@@ -41,7 +41,6 @@
 }
 .shopcar{
 	width: 122px;
-	height: 20px;
 	text-align: center;
 	padding: 10px 0;
 	line-height: 20px;
@@ -74,3 +73,21 @@
 	float: left;
 	margin-left: 40px;
 }
+.index-red-bj{
+	width: 1070px;
+	height: 370px;
+	background: url('/images/qiao/index-main-bj.png') no-repeat;
+}
+.index-red-bj>ul:first-child{
+	display: flex;
+	margin: 0 auto;
+	width: 98%;
+	padding-top:15px;
+	flex-wrap: wrap;
+}
+.index-red-bj>ul:first-child>li{
+	width: 20%;
+	height: 216px;
+	border: 1px solid black;
+}
+.index

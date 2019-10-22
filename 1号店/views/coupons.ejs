@@ -1,0 +1,100 @@
+<% include base/head.ejs %>
+<% include base/nav-coupons.ejs %>
+<link rel="stylesheet" href="/stylesheets/rong/coupons.css">
+
+<div class="index">
+	<div class="index-top">
+		<div>
+			<img src="/images/rong/logo.png" alt="" style="width:210px">
+			<div style="clear:both"></div>
+		</div>
+		<div class="tanxingbox" style="align-items: center;">
+            <input type="text" placeholder="bb霜" class="index-search">
+            <div class="sousuokuang">
+                <img src="/images/rong/sousuo.png" alt="" class="sousuo">
+            </div>
+			<p class="shopcar">购物车
+                <img src="/images/rong/gouwuche.png" alt="" class="gouwuche">
+            </p>
+        </div>
+    </div>
+    <ul class="sousuo-nav">
+        <li>料酒</li>
+        <li>沐浴露</li>
+        <li>饼干蛋糕</li>
+        <li>金纺柔顺剂</li>
+        <li>抽纸</li>
+        <li>电水壶</li>
+        <li>良品铺子</li>
+        <li>充电宝</li>
+        <li>口香糖</li>
+        <li>欧米茄</li>
+    </ul>
+</div>
+
+<div class="nav-center">
+    <div class="nav-center-top">
+        <ul class="nav-center-top-nav">
+            <li>精选好券</li>
+            <li>食品饮料</li>
+            <li>美妆个护</li>
+            <li>母婴玩具</li>
+            <li>活色生鲜</li>
+            <li>宠物园艺</li>
+            <li>医药保健</li>
+            <li>手机数码</li>
+            <li>家用电器</li>
+            <!-- <li>更多分类
+                <img src="/images/rong/jiantou.png" alt="" class="jiantou">
+            </li> -->
+        </ul>
+        <img src="/images/rong/youhuiquan.png" alt="" class="youhuiquan">
+        <p class="youhui">我的优惠券</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="content-main">
+		<% for(i=0;i<result.length;i++){ %>
+		<div class="content-quan">
+		    <div class="content-quan-kuang">
+		        <img src="/images/rong/niunai.jpg" alt="" class="niunai">
+		    </div>
+		    <div class="neirong">
+		        <em class="fuhao">￥</em>
+		        <span class="price"><%= result[i].price %></span>
+		        <i class="manjianquan"><%= result[i].manjianquan %></i>
+		        <p class="condition">满<%= result[i].manduoshao %>元可用</p>
+		        <span class="tips" title="<%= result[i].limit %>"><%= result[i].limit %></span>
+		    </div>
+		    <div class="lingqukuang">
+		        <span class="text"><%= result[i].way %></span>
+		    </div>
+		</div>
+		<% } %>
+		
+	</div>
+    <p style="color: #333;font-size: 12px;text-align: center;margin-top: 50px;">到底了，没有更多好券了</p>
+    <img src="/images/rong/biankuang.png" alt="" class="biankuang">
+
+    <div class="fenye">
+            <button class="bottom">下一页</button>
+            <input class="yema">
+            <button class="top">上一页</button>
+        </div>
+        <div style="clear:both;"></div>
+
+    <div class="coupon-center-wrap">
+        <h3 class="guize">优惠券使用规则:</h3>
+        <p class="guizeneirong">1、1号店发放的优惠券不适用于下列用户：（1）重复注册：即通过同一个IP或同一台电脑注册的多个账号，或多个账户指定同一收货人；（2）无流量用户：使用任何机器人软件、蜘蛛软件、爬虫软件、刷屏软件或其他非人工方式访问或登录1号店的用户；（3）1号店判断的其他带有任何恶意目的的用户。</p>
+        <p class="guizeneirong">2、1号店有权对优惠券进行反作弊监察，并对参加用券的用户信息进行排查，若发现存在前述情形的用户，1号店有权不予发券，对于已经发券的，1号店有权予以作废或要求用户返还，对于已经使用优惠券下单的，1号店有权取消订单，用户不得因此要求1号店做出任何补偿或赔偿。</p>
+        <p class="guizeneirong">3、1号店有权制定和单方面随时修改上述规则，新制定和经修改的规则将在本网站上进行公布，不做逐一通知。新制定和经修改的规则一旦公布则立即生效，且对生效前的用户同样适用。</p>
+    </div>
+    <div style="height: 20px;"></div>
+</div> 
+
+
+<script src="/javascripts/rong/coupons.js"></script>
+<% include base/copyright.ejs %>
+<% include base/foot.ejs %>
+
