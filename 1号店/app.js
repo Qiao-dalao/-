@@ -35,11 +35,9 @@ app.get('/brands',require('./routes/brands'))	//超级品牌
 app.get('/coupons',require('./routes/coupons'))	//领券中心
 app.get('/robgolb',require('./routes/robgolb'))	//抢金币
 app.get('/golbsign',require('./routes/golbsign'))	//金币签到
-<<<<<<< HEAD
 //app.get('/login',require('./routes/login'))		//登录
 app.get('/recharge',require('./routes/recharge'))//充值
 app.get('/myorder',require('./routes/myorder'))//我的订单
-=======
 
 app.get('/login',require('./routes/login'))		//登录
 app.get('/register',require('./routes/register'))	//注册
@@ -49,8 +47,6 @@ app.get('/login',require('./routes/login'))		//登录
 app.get('/login',require('./routes/login'))		//登录
 app.get('/register',require('./routes/register'))	//注册
 
-
->>>>>>> 92f83b65b4100b06d3fa4a84134c2e7078c821f4
 app.use('/', indexRouter);	//主页
 
 //功能路由
