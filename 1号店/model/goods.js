@@ -5,7 +5,9 @@ var mongooseSchema = new mongoose.Schema({
 	miaoshu:String,
 	price:Number,
 	golb:Number,
-	oldprice:Number
+	oldprice:Number,
+	couponslist:String,
+	list:Object
 });
 var mongooseModel = mongoose.model('good', mongooseSchema);
 module.exports = mongooseModel

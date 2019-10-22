@@ -35,13 +35,24 @@ app.get('/brands',require('./routes/brands'))	//超级品牌
 app.get('/coupons',require('./routes/coupons'))	//领券中心
 app.get('/robgolb',require('./routes/robgolb'))	//抢金币
 app.get('/golbsign',require('./routes/golbsign'))	//金币签到
+
 app.get('/login',require('./routes/login'))		//登录
 app.get('/register',require('./routes/register'))	//注册
 app.get('/login',require('./routes/login'))		//登录
+
+
+app.get('/login',require('./routes/login'))		//登录
+app.get('/register',require('./routes/register'))	//注册
+
+
 app.use('/', indexRouter);	//主页
 
 //功能路由
 app.get('/add',require('./api/add'))
+app.use('/user/login',require('./api/login'))
+app.use('/user/register',require('./api/register'))
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

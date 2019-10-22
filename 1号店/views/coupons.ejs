@@ -35,18 +35,10 @@
 <div class="nav-center">
     <div class="nav-center-top">
         <ul class="nav-center-top-nav">
-            <li>精选好券</li>
-            <li>食品饮料</li>
-            <li>美妆个护</li>
-            <li>母婴玩具</li>
-            <li>活色生鲜</li>
-            <li>宠物园艺</li>
-            <li>医药保健</li>
-            <li>手机数码</li>
-            <li>家用电器</li>
-            <!-- <li>更多分类
-                <img src="/images/rong/jiantou.png" alt="" class="jiantou">
-            </li> -->
+			<% for(var i=0;i<data.length;i++){ %>
+            <li><%= data[i].couponslist %></li>
+            
+            <% } %>
         </ul>
         <img src="/images/rong/youhuiquan.png" alt="" class="youhuiquan">
         <p class="youhui">我的优惠券</p>
@@ -54,8 +46,6 @@
 </div>
 
 <div class="content">
-	<p><%= i %></p>
-	<% for(var j=0;j<couponslist.length;j++){ %>
     <div class="content-main">
 		<% for(var i=0;i<result.length;i++){ %>
 		<div class="content-quan">

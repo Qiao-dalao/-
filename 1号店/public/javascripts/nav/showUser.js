@@ -11,12 +11,11 @@ function get(){
         arr[i] = arr[i].trim().split('=') 
         if (arr[i][0] === 'name') {
             var user = JSON.parse(unescape(arr[i][1]))
-            $('#user').text(user.username)
             boo=true
         } 
     }
     if (!boo) {
-        location.href = '/admin/login'
+        // location.href = '/login'
     }
     console.log(arr)
 }

@@ -1,6 +1,6 @@
 <% include base/head.ejs %>
 <link rel="stylesheet" href="/stylesheets/rong/register.css">
-
+<form>
 <div class="regist_header clearfix">
     <div class="wrap">
         <img class="login" src="/images/rong/loginlogo.jpg" height="55" alt="1号店">
@@ -20,7 +20,7 @@
             </div>
             <span class="fr">
                     您好，欢迎光临1号店！
-                <a href="" class="blue_link" style="text-decoration:none;">请登录</a>
+                <a href="/login" class="blue_link" style="text-decoration:none;">请登录</a>
             </span> 
             
         </div>
@@ -40,7 +40,7 @@
             <ul class="clearfix">
                 <li>
                     <div class="y_same_item">
-                        <input class="ysame_input" type="text" placeholder="用户名">
+                        <input name="username" class="ysame_input" type="text" placeholder="用户名">
                     </div>
                 </li>
                 <li>
@@ -56,12 +56,12 @@
                 </li> -->
                 <li>
                     <div class="y_same_item">
-                        <input class="ysame_input y_set_password" type="password" placeholder="设置密码">
+                        <input name="password"  id="mima" class="ysame_input y_set_password" type="password" placeholder="设置密码">
                     </div>
                 </li>
                 <li>
                     <div class="y_same_item">
-                        <input class="ysame_input" type="password" placeholder="确认密码">
+                        <input class="ysame_input" id="suremima" type="password" placeholder="确认密码">
                     </div>
                 </li>
                 <li>
@@ -69,7 +69,7 @@
                         点击注册，表示您同意1号店
                         <a href="" target="_blank">《服务协议及隐私声明》</a>
                     </div>
-                    <button class="y_agreement_btn">同意协议并注册</button>
+                    <button class="y_agreement_btn" type="submit">同意协议并注册</button>
                 </li>
             </ul>
         </div>
@@ -84,6 +84,9 @@
     <a target="_blank">营业执照</a>
     <p>Copyright © 1号店网上超市 2007-2018，All Rights Reserved</p>
 </div>
+</form>
 
+
+<script src="/javascripts/ajax/register.js"></script>
 <script src="/javascripts/rong/register.js"></script>
 <% include base/foot.ejs %>

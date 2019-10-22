@@ -1,16 +1,22 @@
 const goods = require('../model/goods')
 function coupons(req,res){
-	goods.find({"type":"优惠分类"}).then((couponslist)=>{
-		for(var i=0;i<coupons.length;i++){
-			goods.find({"quantype":couponslist[i].couponslist}).then((result)=>{
+
+	var arr= []
+	goods.find({"type":"优惠分类"}).then((data)=>{
+		for(var i=0;i<data.length;i++){
+			goods.find({"quantype":data[i].couponslist}).then((quantype)=>{
+				arr.push(quantype)
+				
 				res.render('coupons',{
-					i:i,
-					result:result,
-					couponslist:couponslist
+					data : data,
+					result:arr
 				})
 			})
 		}
+		
+		
 	})
+	console.log(arr[0][0].price,'--------------------------')
 }
 
 module.exports = coupons
