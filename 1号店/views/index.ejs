@@ -174,7 +174,7 @@
 		cursor: pointer;
 		width: 110px;
 		height: 110px;
-	}	
+	}
 	.bursting {
 		float: left;
 		position: relative;
@@ -337,212 +337,33 @@
 					<p style="font-size: 16px;color: #fff;position: relative;bottom:7px;left: 5px;">距结束仅剩</p>
 				</div>
 			</li>
-
+			<% for(var i=0;i<results.length;i++){ %>
 			<li>
 				<div style="background: #fff;width: 100%;height: 216px;cursor: pointer;"  class="dong">
 					<div class="single_top">
-						<img src="/images/qiao/9hao.jpg" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
+						<img src="<%= results[i].img %>" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
 					</div>
 				    <div class="single_bottom">
                         <div class="s_title">
-							【英红九号旗舰店】 积庆里广东特产英德红茶 150克 东方美人 礼盒 茶叶 中秋送礼工夫
+							<%= results[i].miaoshu %>
 						</div>
 						<div class="s_con">
                             <div class="s_num">
 								<span>￥</span>
-								<span style="margin-left: -5px;">298</span>
+								<span style="margin-left: -5px;"><%= results[i].price %></span>
 								<span class="s_num_underline">
 									<span>￥</span>
-									<span style="margin-left: -5px;">318</span>
+									<span style="margin-left: -5px;"><%= results[i].oldprice %></span>
 								</span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</li>
+			<% } %>
+			
 
-			<li>
-				<div style="background: #fff;width: 100%;height: 216px;cursor: pointer;"  class="dong">
-					<div class="single_top">
-						<img src="/images/qiao/9hao.jpg" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
-					</div>
-					<div class="single_bottom">
-						<div class="s_title">
-							【英红九号旗舰店】 积庆里广东特产英德红茶 150克 东方美人 礼盒 茶叶 中秋送礼工夫
-						</div>
-						<div class="s_con">
-							<div class="s_num">
-								<span>￥</span>
-								<span style="margin-left: -5px;">298</span>
-								<span class="s_num_underline">
-									<span>￥</span>
-									<span style="margin-left: -5px;">318</span>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-
-			<li>
-				<div style="background: #fff;width: 100%;height: 216px;cursor: pointer;"  class="dong">
-					<div class="single_top">
-						<img src="/images/qiao/9hao.jpg" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
-					</div>
-					<div class="single_bottom">
-						<div class="s_title">
-							【英红九号旗舰店】 积庆里广东特产英德红茶 150克 东方美人 礼盒 茶叶 中秋送礼工夫
-						</div>
-						<div class="s_con">
-							<div class="s_num">
-								<span>￥</span>
-								<span style="margin-left: -5px;">298</span>
-								<span class="s_num_underline">
-									<span>￥</span>
-									<span style="margin-left: -5px;">318</span>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-
-			<li>
-				<div style="background: #fff;width: 100%;height: 216px;cursor: pointer;"  class="dong">
-					<div class="single_top">
-						<img src="/images/qiao/9hao.jpg" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
-					</div>
-					<div class="single_bottom">
-						<div class="s_title">
-							【英红九号旗舰店】 积庆里广东特产英德红茶 150克 东方美人 礼盒 茶叶 中秋送礼工夫
-						</div>
-						<div class="s_con">
-							<div class="s_num">
-								<span>￥</span>
-								<span style="margin-left: -5px;">298</span>
-								<span class="s_num_underline">
-									<span>￥</span>
-									<span style="margin-left: -5px;">318</span>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-
-			<li>
-				<div style="background: #fff;width: 100%;height: 216px;cursor: pointer;"  class="dong">
-					<div class="single_top">
-						<img src="/images/qiao/9hao.jpg" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
-					</div>
-					<div class="single_bottom">
-						<div class="s_title">
-							【英红九号旗舰店】 积庆里广东特产英德红茶 150克 东方美人 礼盒 茶叶 中秋送礼工夫
-						</div>
-						<div class="s_con">
-							<div class="s_num">
-								<span>￥</span>
-								<span style="margin-left: -5px;">298</span>
-								<span class="s_num_underline">
-									<span>￥</span>
-									<span style="margin-left: -5px;">318</span>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-
-			<li>
-				<div style="background: #fff;width: 100%;height: 216px;cursor: pointer;"  class="dong">
-					<div class="single_top">
-						<img src="/images/qiao/9hao.jpg" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
-					</div>
-					<div class="single_bottom">
-						<div class="s_title">
-							【英红九号旗舰店】 积庆里广东特产英德红茶 150克 东方美人 礼盒 茶叶 中秋送礼工夫
-						</div>
-						<div class="s_con">
-							<div class="s_num">
-								<span>￥</span>
-								<span style="margin-left: -5px;">298</span>
-								<span class="s_num_underline">
-									<span>￥</span>
-									<span style="margin-left: -5px;">318</span>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div style="background: #fff;width: 100%;height: 216px;cursor: pointer;"  class="dong">
-					<div class="single_top">
-						<img src="/images/qiao/9hao.jpg" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
-					</div>
-					<div class="single_bottom">
-						<div class="s_title">
-							【英红九号旗舰店】 积庆里广东特产英德红茶 150克 东方美人 礼盒 茶叶 中秋送礼工夫
-						</div>
-						<div class="s_con">
-							<div class="s_num">
-								<span>￥</span>
-								<span style="margin-left: -5px;">298</span>
-								<span class="s_num_underline">
-									<span>￥</span>
-									<span style="margin-left: -5px;">318</span>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-
-			<li>
-				<div style="background: #fff;width: 100%;height: 216px;cursor: pointer;"  class="dong">
-					<div class="single_top">
-						<img src="/images/qiao/9hao.jpg" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
-					</div>
-					<div class="single_bottom">
-						<div class="s_title">
-							【英红九号旗舰店】 积庆里广东特产英德红茶 150克 东方美人 礼盒 茶叶 中秋送礼工夫
-						</div>
-						<div class="s_con">
-							<div class="s_num">
-								<span>￥</span>
-								<span style="margin-left: -5px;">298</span>
-								<span class="s_num_underline">
-									<span>￥</span>
-									<span style="margin-left: -5px;">318</span>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-
-			<li>
-				<div style="background: #fff;width: 100%;height: 216px;cursor: pointer;"  class="dong">
-					<div class="single_top">
-						<img src="/images/qiao/9hao.jpg" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
-					</div>
-					<div class="single_bottom">
-						<div class="s_title">
-							【英红九号旗舰店】 积庆里广东特产英德红茶 150克 东方美人 礼盒 茶叶 中秋送礼工夫
-						</div>
-						<div class="s_con">
-							<div class="s_num">
-								<span>￥</span>
-								<span style="margin-left: -5px;">298</span>
-								<span class="s_num_underline">
-									<span>￥</span>
-									<span style="margin-left: -5px;">318</span>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
+			
 		</ul>
 	</div>
 	<div style="height:100px;"></div>
@@ -652,8 +473,8 @@
 var dong = document.querySelectorAll('.dong')
 for(var i=0;i<dong.length;i++){
 	dong[i].onmouseover=function(){
-		this.style.boxShadow='0 0 10px black'
-		this.style.border='1px solid black'
+		this.style.boxShadow='0 0 10px #b77347'
+		this.style.border='1px solid #b77347'
 		this.style.transition='500ms'
 	}
 	dong[i].onmouseleave=function(){
