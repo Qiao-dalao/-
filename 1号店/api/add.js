@@ -1,98 +1,521 @@
 const goods = require('../model/goods')
 
 function a(req,res){
-	// goods.create(
-	// 	{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:5,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:110,
-	// 		limit:"仅可购买部分牛奶商品",
-	// 		way:"免费领取"
-	// 	},{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:10,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:188,
-	// 		limit:"仅可购买部分牛奶商品",
-	// 		way:"免费领取"
-	// 	},{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:120,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:199,
-	// 		limit:"限购[三只松鼠旗舰店]店铺部分商品",
-	// 		way:"免费领取"
-	// 	},{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:200,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:300,
-	// 		limit:"限购[来伊份旗舰店]店铺部分商品",
-	// 		way:"免费领取"
-	// 	},{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:120,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:199,
-	// 		limit:"限购[来伊份旗舰店]店铺部分商品",
-	// 		way:"免费领取"
-	// 	},{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:200,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:300,
-	// 		limit:"限购[百味草品牌旗舰店]店铺部分商品",
-	// 		way:"免费领取"
-	// 	},{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:50,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:99,
-	// 		limit:"限购[百味草品牌旗舰店]店铺部分商品",
-	// 		way:"免费领取"
-	// 	},{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:120,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:199,
-	// 		limit:"限购[百味草品牌旗舰店]店铺部分商品",
-	// 		way:"免费领取"
-	// 	},{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:100,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:199,
-	// 		limit:"仅可购买跨店铺活动商品",
-	// 		way:"免费领取"
-	// 	},{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:20,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:199,
-	// 		limit:"限购[三只松鼠旗舰店]店铺商品",
-	// 		way:"免费领取"
-	// 	},{
-	// 		type:"优惠券",
-	// 		img:"/images/rong/niunai.jpg",
-	// 		price:5,
-	// 		manjianquan:"满减券",
-	// 		manduoshao:69,
-	// 		limit:"限购[维达国际官方旗舰店]店铺部分商品",
-	// 		way:"免费领取"
-	// 	}
-	// )
-	goods.update({"img":"/images/rong/niunai.jpg"},{$set:{"img":"http://img10.360buyimg.com/n3/null"}},{multi:true})
+	goods.create({
+		"couponslist" : "精选好券",
+		"type" : "优惠分类",
+		"list":[
+			{
+				"type" : "优惠券",
+				"img" : "/images/rong/niunai.jpg",
+				"price" : 5,
+				"quantype" : "精选好券",
+				"manjianquan" : "满减券",
+				"manduoshao" : 110,
+				"limit" : "仅可购买部分牛奶商品",
+				"way" : "免费领取",
+			},{
+				"type" : "优惠券",
+				"img" : "/images/rong/niunai.jpg",
+				"price" : 10,
+				"manjianquan" : "满减券",
+				"manduoshao" : 188,
+				"limit" : "仅可购买部分牛奶商品",
+				"way" : "免费领取",
+				"quantype" : "精选好券",
+			},{
+				"type" : "优惠券",
+				"img" : "/images/rong/niunai.jpg",
+				"price" : 120,
+				"manjianquan" : "满减券",
+				"manduoshao" : 199,
+				"limit" : "限购[三只松鼠旗舰店]店铺部分商品",
+				"way" : "免费领取",
+				"quantype" : "精选好券",
+			},{
+				"type" : "优惠券",
+				"img" : "/images/rong/niunai.jpg",
+				"price" : 200,
+				"manjianquan" : "满减券",
+				"manduoshao" : 300,
+				"limit" : "限购[来伊份旗舰店]店铺部分商品",
+				"way" : "免费领取",
+				"quantype" : "精选好券",
+			},{
+				"type" : "优惠券",
+				"img" : "/images/rong/niunai.jpg",
+				"price" : 120,
+				"manjianquan" : "满减券",
+				"manduoshao" : 199,
+				"limit" : "限购[来伊份旗舰店]店铺部分商品",
+				"way" : "免费领取",
+				"quantype" : "精选好券",
+			},{
+				"type" : "优惠券",
+				"img" : "/images/rong/niunai.jpg",
+				"price" : 100,
+				"manjianquan" : "满减券",
+				"manduoshao" : 199,
+				"limit" : "仅可购买跨店铺活动商品",
+				"way" : "免费领取",
+				"quantype" : "精选好券",
+			},{
+				"type" : "优惠券",
+				"img" : "/images/rong/niunai.jpg",
+				"price" : 200,
+				"manjianquan" : "满减券",
+				"manduoshao" : 300,
+				"limit" : "限购[百味草品牌旗舰店]店铺部分商品",
+				"way" : "免费领取",
+				"quantype" : "精选好券",
+			},{
+				"type" : "优惠券",
+				"img" : "/images/rong/niunai.jpg",
+				"price" : 50,
+				"manjianquan" : "满减券",
+				"manduoshao" : 99,
+				"limit" : "限购[百味草品牌旗舰店]店铺部分商品",
+				"way" : "免费领取",
+				"quantype" : "精选好券",
+			},{
+				"type" : "优惠券",
+				"img" : "/images/rong/niunai.jpg",
+				"price" : 20,
+				"manjianquan" : "满减券",
+				"manduoshao" : 199,
+				"limit" : "限购[三只松鼠旗舰店]店铺商品",
+				"way" : "免费领取",
+				"quantype" : "精选好券",
+			},{
+				"type" : "优惠券",
+				"img" : "/images/rong/niunai.jpg",
+				"price" : 120,
+				"manjianquan" : "满减券",
+				"manduoshao" : 199,
+				"limit" : "限购[百味草品牌旗舰店]店铺部分商品",
+				"way" : "免费领取",
+				"quantype" : "精选好券",
+			}
+		]
+	},{
+
+    "couponslist" : "食品饮料",
+    "type" : "优惠分类",
+	"list":[
+		{
+			"type" : "优惠券",
+			"img" : "/images/rong/1.jpg",
+			"price" : 20,
+			"quantype" : "食品饮料",
+			"manjianquan" : "满减券",
+			"manduoshao" : 1299,
+			"limit" : "限购  [九柔进口食品专营店] 店铺商品",
+			"way" : "免费领取",  
+		},{
+			"type" : "优惠券",
+			"img" : "/images/rong/2.jpg",
+			"price" : 15,
+			"quantype" : "食品饮料",
+			"manjianquan" : "满减券",
+			"manduoshao" : 169,
+			"limit" : "限购  [蒙兴食品专营店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "食品饮料",
+			"img" : "/images/rong/3.jpg",
+			"price" : 50,
+			"manjianquan" : "满减券",
+			"manduoshao" : 899,
+			"limit" : "限购  [御鹿干邑官方旗舰店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "食品饮料",
+			"img" : "/images/rong/4.jpg",
+			"price" : 300,
+			"manjianquan" : "满减券",
+			"manduoshao" : 799,
+			"limit" : "限购  [中国特产·惠安馆] 店铺部分商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "食品饮料",
+			"img" : "/images/rong/5.jpg",
+			"price" : 30,
+			"manjianquan" : "满减券",
+			"manduoshao" : 599,
+			"limit" : "限购  [浮来春官方旗舰店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "食品饮料",
+			"img" : "/images/rong/6.jpg",
+			"price" : 10,
+			"manjianquan" : "满减券",
+			"manduoshao" : 199,
+			"limit" : "限购  [浮来春官方旗舰店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "食品饮料",
+			"img" : "/images/rong/7.jpg",
+			"price" : 50,
+			"manjianquan" : "满减券",
+			"manduoshao" : 599,
+			"limit" : "限购  [斟酒网酒类专营店] 店铺部分商品",
+			"way" : "活动已结束",
+		},{
+			"type" : "优惠券",
+			"quantype" : "食品饮料",
+			"img" : "/images/rong/8.jpg",
+			"price" : 20,
+			"manjianquan" : "满减券",
+			"manduoshao" : 499,
+			"limit" : "限购  [平坝酒类旗舰店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "食品饮料",
+			"img" : "/images/rong/9.jpg",
+			"price" : 10,
+			"manjianquan" : "满减券",
+			"manduoshao" : 199,
+			"limit" : "限购  [国美酒业官方旗舰店] 店铺部分商品",
+			"way" : "活动已结束",
+		},{
+			"type" : "优惠券",
+			"quantype" : "食品饮料",
+			"img" : "/images/rong/10.jpg",
+			"price" : 120,
+			"manjianquan" : "满减券",
+			"manduoshao" : 1600,
+			"limit" : "限购  [中绍网官方旗舰店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "食品饮料",
+			"img" : "/images/rong/11.jpg",
+			"price" : 10,
+			"manjianquan" : "满减券",
+			"manduoshao" : 699,
+			"limit" : "限购  [牛栏山旗舰店] 店铺部分商品",
+			"way" : "免费领取",
+		}
+	]
+
+},
+{
+
+    "couponslist" : "美妆个护",
+    "type" : "优惠分类",
+	"list":[
+		{
+			"type" : "优惠券",
+			"img" : "/images/rong/12.jpg",
+			"price" : 30,
+			"quantype" : "美妆个护",
+			"manjianquan" : "满减券",
+			"manduoshao" : 500,
+			"limit" : "限购  [文锦美妆专营店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"img" : "/images/rong/13.jpg",
+			"price" : 50,
+			"quantype" : "美妆个护",
+			"manjianquan" : "满减券",
+			"manduoshao" : 398,
+			"limit" : "限购  [若惜化妆品专营店] 店铺部分商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "美妆个护",
+			"img" : "/images/rong/14.jpg",
+			"price" : 3,
+			"manjianquan" : "满减券",
+			"manduoshao" : 50,
+			"limit" : "限购  [意辰美妆专营店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "美妆个护",
+			"img" : "/images/rong/15.jpg",
+			"price" : 20,
+			"manjianquan" : "满减券",
+			"manduoshao" : 200,
+			"limit" : "限购  [逆零官方旗舰店] 店铺商品",
+			"way" : "免费领取",
+		}
+	]
+
+},
+{
+    "couponslist" : "母婴玩具",
+    "type" : "优惠分类",
+	"list":[
+		{
+			"type" : "优惠券",
+			"img" : "/images/rong/19.jpg",
+			"price" : 10,
+			"quantype" : "母婴玩具",
+			"manjianquan" : "满减券",
+			"manduoshao" : 50,
+			"limit" : "仅可购买喜安智自营部分商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"img" : "/images/rong/20.jpg",
+			"price" : 10,
+			"quantype" : "母婴玩具",
+			"manjianquan" : "满减券",
+			"manduoshao" : 700,
+			"limit" : "限购  [菀儿乐器专营店] 店铺部分商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "母婴玩具",
+			"img" : "/images/rong/21.jpg",
+			"price" : 10,
+			"manjianquan" : "满减券",
+			"manduoshao" : 200,
+			"limit" : "限购  [孔雀河官方旗舰店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "母婴玩具",
+			"img" : "/images/rong/22.jpg",
+			"price" : 20,
+			"manjianquan" : "满减券",
+			"manduoshao" : 400,
+			"limit" : "限购  [孔雀河官方旗舰店] 店铺商品",
+			"way" : "免费领取",
+		}
+	]
+
+},
+{
+
+    "couponslist" : "活色生鲜",
+    "type" : "优惠分类",
+	"list":[
+		{
+			"type" : "优惠券",
+			"img" : "/images/rong/23.jpg",
+			"price" : 145,
+			"quantype" : "活色生鲜",
+			"manjianquan" : "满减券",
+			"manduoshao" : 199,
+			"limit" : "限购  [丰祥福瑞生鲜专营店] 店铺部分商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"img" : "/images/rong/24.jpg",
+			"price" : 10,
+			"quantype" : "活色生鲜",
+			"manjianquan" : "满减券",
+			"manduoshao" : 200,
+			"limit" : "限购  [菲俞水果拼购专营店] 店铺商品",
+			"way" : "活动已结束",
+		},{
+			"type" : "优惠券",
+			"quantype" : "活色生鲜",
+			"img" : "/images/rong/25.jpg",
+			"price" : 149,
+			"manjianquan" : "满减券",
+			"manduoshao" : 230,
+			"limit" : "限购  [丰祥福瑞生鲜专营店] 店铺部分商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "活色生鲜",
+			"img" : "/images/rong/26.jpg",
+			"price" : 30,
+			"manjianquan" : "满减券",
+			"manduoshao" : 256,
+			"limit" : "限购  [如意三宝旗舰店] 店铺商品",
+			"way" : "免费领取",
+		}
+	]
+
+},
+{
+ 
+    "couponslist" : "宠物园艺",
+    "type" : "优惠分类",
+	"list":[
+		{
+			"type" : "优惠券",
+			"img" : "/images/rong/27.jpg",
+			"price" : 10,
+			"quantype" : "宠物园艺",
+			"manjianquan" : "满减券",
+			"manduoshao" : 99,
+			"limit" : "限购  [云集创想宠物用品专营店] 店铺部分商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"img" : "/images/rong/28.jpg",
+			"price" : 5,
+			"quantype" : "宠物园艺",
+			"manjianquan" : "满减券",
+			"manduoshao" : 59,
+			"limit" : "限购  [祖念宠物用品专营店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "宠物园艺",
+			"img" : "/images/rong/29.jpg",
+			"price" : 10,
+			"manjianquan" : "满减券",
+			"manduoshao" : 198,
+			"limit" : "限购  [祖念宠物用品专营店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "宠物园艺",
+			"img" : "/images/rong/30.jpg",
+			"price" : 25,
+			"manjianquan" : "满减券",
+			"manduoshao" : 68,
+			"limit" : "限购  [云集创想宠物用品专营店] 店铺部分商品",
+			"way" : "免费领取",
+		}
+	]
+ 
+},
+{
+
+    "couponslist" : "医药保健",
+    "type" : "优惠分类",
+	"list":[
+		{
+			"type" : "优惠券",
+			"img" : "/images/rong/31.jpg",
+			"price" : 20,
+			"quantype" : "医药保健",
+			"manjianquan" : "满减券",
+			"manduoshao" : 299,
+			"limit" : "限购  [叶娜成人用品专营店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"img" : "/images/rong/32.jpg",
+			"price" : 20,
+			"quantype" : "医药保健",
+			"manjianquan" : "满减券",
+			"manduoshao" : 300,
+			"limit" : "限购  [双羽成人用品专营店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "医药保健",
+			"img" : "/images/rong/33.jpg",
+			"price" : 50,
+			"manjianquan" : "满减券",
+			"manduoshao" : 688,
+			"limit" : "限购  [雅轩斋保健器械旗舰店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "医药保健",
+			"img" : "/images/rong/34.jpg",
+			"price" : 10,
+			"manjianquan" : "满减券",
+			"manduoshao" : 599,
+			"limit" : "限购  [德竣百货海外专营店] 店铺商品",
+			"way" : "免费领取",
+		}
+	]
+
+},
+{
+  
+    "couponslist" : "手机数码",
+    "type" : "优惠分类",
+	"list":[
+		{
+			"type" : "优惠券",
+			"img" : "/images/rong/35.jpg",
+			"price" : 50,
+			"quantype" : "手机数码",
+			"manjianquan" : "满减券",
+			"manduoshao" : 688,
+			"limit" : "限购  [壳佳旗舰店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"img" : "/images/rong/36.jpg",
+			"price" : 3,
+			"quantype" : "手机数码",
+			"manjianquan" : "满减券",
+			"manduoshao" : 48,
+			"limit" : "限购  [蓝易迅手机配件专营店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "手机数码",
+			"img" : "/images/rong/37.jpg",
+			"price" : 1,
+			"manjianquan" : "满减券",
+			"manduoshao" : 36,
+			"limit" : "限购  [上海函世数码配件专营店] 店铺商品",
+			"way" : "免费领取",
+		},{
+			"type" : "优惠券",
+			"quantype" : "手机数码",
+			"img" : "/images/rong/38.jpg",
+			"price" : 20,
+			"manjianquan" : "满减券",
+			"manduoshao" : 199,
+			"limit" : "限购  [罕技旗舰店] 店铺商品",
+			"way" : "免费领取",
+		}
+	]
+
+},
+{
+	"list":[{
+		"type" : "优惠券",
+		"quantype" : "家用电器",
+		"img" : "/images/rong/42.jpg",
+		"price" : 100,
+		"manjianquan" : "满减券",
+		"manduoshao" : 1000,
+		"limit" : "限购  [葡悦旗舰店] 店铺商品",
+		"way" : "免费领取",
+	},{
+		"type" : "优惠券",
+		"quantype" : "家用电器",
+		"img" : "/images/rong/41.jpg",
+		"price" : 20,
+		"manjianquan" : "满减券",
+		"manduoshao" : 268,
+		"limit" : "限购  [双喜厨房电器旗舰店] 店铺商品",
+		"way" : "免费领取",   
+	},{
+		"type" : "优惠券",
+		"img" : "/images/rong/40.jpg",
+		"price" : 10,
+		"quantype" : "家用电器",
+		"manjianquan" : "满减券",
+		"manduoshao" : 198,
+		"limit" : "限购  [康美乐电器专营店] 店铺商品",
+		"way" : "免费领取",
+	},{
+		"type" : "优惠券",
+		"img" : "/images/rong/39.jpg",
+		"price" : 30,
+		"quantype" : "家用电器",
+		"manjianquan" : "满减券",
+		"manduoshao" : 198,
+		"limit" : "限购  [佳禾美个护健康旗舰店] 店铺商品",
+		"way" : "免费领取",
+	}],
+    "couponslist" : "家用电器",
+    "type" : "优惠分类",
+
+})
 	res.end('添加成功')
 }
 module.exports = a

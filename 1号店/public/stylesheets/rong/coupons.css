@@ -217,6 +217,7 @@
     bottom: 82px;
     left: 280px;
     border-radius:0 5px 5px 0;
+	opacity: 0.8;
 }
 .text{
     display: inline-block;
@@ -231,6 +232,7 @@
 .lingqukuang:hover{
     cursor: pointer;
     background: #ff6770;
+	opacity: 1;
 }
 .biankuang{
     width: 80%;
