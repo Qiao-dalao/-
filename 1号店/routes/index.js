@@ -1,12 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const goods = require('../model/goods.js')
+function index(req,res){
+    goods.find({type:'首页超级单品'}).then((result)=>{
+      
+      res.render('index',{
+          results:result
+      }) 
+    });
+      
+}
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', {
-	   title: '1号店(yhd.com)_全球超市，轻松到家！' ,
-	   
-  });
-});
 
-module.exports = router;
+
+
+
+module.exports = index

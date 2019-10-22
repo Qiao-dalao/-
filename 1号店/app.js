@@ -45,14 +45,16 @@ app.get('/login',require('./routes/login'))		//登录
 app.get('/register',require('./routes/register'))	//注册
 
 
-app.use('/', indexRouter);	//主页
+
 
 //功能路由
-app.get('/add',require('./api/add'))
+app.use('/add',require('./api/add'))
 app.use('/user/login',require('./api/login'))
 app.use('/user/register',require('./api/register'))
 
 
+
+app.use('/', indexRouter);	//主页
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
