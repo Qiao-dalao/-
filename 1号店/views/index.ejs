@@ -1,0 +1,488 @@
+<% include base/head.ejs %>
+<% include base/nav-index.ejs %>
+<% include base/search-index.ejs %>
+<link rel="stylesheet" href="/stylesheets/bootstrap.css">
+<style>
+	body{
+		background: #f5f5f5;
+	}
+	/* Make the image fully responsive */
+	.carousel-inner img {
+		width: 100%;
+		height: 100%;
+	}
+	.sing_text_font {
+		font-size: 14px;
+		color: rgba(255,255,255,0.8);
+		display: block;
+		margin-left: 55px;
+		height: 22px;
+		float: left;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.single_top {
+		width: 210px;
+		height: 135px;
+		background-position: center;
+		background-repeat: no-repeat;
+		text-align: center;
+		position: relative;
+	}
+	.single_bottom {
+		height: 81px;
+		width: 150px;
+		margin: 0 auto;
+		position: relative;
+	}
+	.s_title {
+		width: 153px;
+		height: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		margin-top: 10px;
+	}
+	.s_con {
+		height: 33px;
+		padding-top: 12px;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+	}
+	.s_num {
+		display: inline-block;
+		font-family: Tahoma,"Microsoft YaHei";
+		color: #e50113;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	.s_num_underline {
+		text-decoration: line-through;
+		font-size: 12px;
+		color: #999;
+		font-weight: normal;
+		margin-left: 4px;
+	}
+	.qua_tit_spanFirst {
+		height: 35px;
+		margin-left: 20px;
+		font-size: 26px;
+		display: inline-block;
+		cursor: pointer;
+		max-width: 190px;
+		overflow: hidden;
+    }
+	.qua_tit_spanLast {
+		margin-left: 8px;
+		font-size: 16px;
+		margin-top: 27px;
+		height: 21px;
+		cursor: pointer;
+		display: inline-block;
+		max-width: 208px;
+		overflow: hidden;
+		position: relative;
+		top: -3px;
+	}
+	.qua_show_con {
+		width: 900px;
+		height: 334px;
+		position: relative;
+		padding-left: 20px;
+	}
+	.qua_left_font_con {
+		font-size: 14px;
+		color: #fff;
+		position: absolute;
+		width: 176px;
+		height: 90px;
+		margin-left: 14px;
+		top: 16px;
+	}
+	.qua_left_f_con_font {
+		background: rgba(255,255,255,0.1) !important;
+		border: 1px solid rgba(255,255,255,0.61) !important;
+		width: 74px;
+		height: 23px;
+		text-align: center;
+		line-height: 23px;
+		float: left;
+		margin-right: 9px;
+		margin-bottom: 9px;
+		cursor: pointer;
+		color: #fff !important;
+		overflow: hidden;
+	}
+	.qua_left_f_con_font:hover{
+        color: #fff !important;
+		background: rgba(255,255,254,0.3) !important;
+	}
+	.qua_show_con_right {
+		width: 680px;
+		height: 334px;
+		margin-top: 8px;
+		float: left;
+	}
+	.import_snacks {
+		width: 335px;
+		height: 167px;
+		position: relative;
+		float: left;
+		background-color: #faf7f6;
+		background-image: linear-gradient(-135deg,#fafaf9 0%,#faf7f6 100%);
+		cursor: pointer;
+	}
+	.import_tit {
+		margin-top: 40px;
+		margin-left: 30px;
+		color: #793a11;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 150px;
+	}
+	.voucher_tit {
+		color: #b77347;
+		margin-top: 5px;
+		margin-left: 30px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 150px;	
+	}
+	.buy_btn {
+		border: 1px solid rgba(192,132,92,0.5);
+		width: 78px;
+		height: 27px;
+		text-align: center;
+		line-height: 27px;
+		margin-top: 15px;
+		margin-left: 30px;
+		color: #c0845c;
+		cursor: pointer;
+		overflow: hidden;
+	}
+	.buy_btn:hover{
+		background: #fff;
+	}
+	.import_snacks img {
+		position: absolute;
+		right: 30px;
+		bottom: 27px;
+		transition: transform .4s ease,-webkit-transform .4s ease,-moz-transform .4s ease,-o-transform .4s ease;
+		cursor: pointer;
+		width: 110px;
+		height: 110px;
+	}
+	.bursting {
+		float: left;
+		position: relative;
+		width: 167px;
+		height: 167px;
+		cursor: pointer;
+	}
+	.bursting p {
+		margin-left: 15px;
+		font-size: 14px;
+		overflow: hidden;
+		height: 14px;
+		width: 102px;
+		line-height: 1;
+		margin-bottom: 7px;
+	}
+	.burting_font{
+		margin-top: 15px !important;
+	}
+	.bursting img {
+		position: absolute;
+		width: 90px;
+		height: 90px;
+		bottom: 10px;
+		right: 10px;
+		margin-top: 15px;
+		margin-left: 15px;
+		transition: transform .4s ease,-webkit-transform .4s ease,-moz-transform .4s ease,-o-transform .4s ease;
+		cursor: pointer;
+	}
+	.qua_top {
+		width: 320px;
+		height: 421px;
+		border-left: 1px solid #f6f6f6;
+		position: relative;
+		bottom:391px;
+		float:right;
+	}
+    .qua_top p {
+		margin-left: 100px;
+		font-size: 14px;
+		color: #999;
+		margin-top: 8px;
+		width: 130px;
+		height: 21px;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.qua_top_font {
+		font-size: 16px;
+		color: #333 !important;
+		margin-top: 25px !important;
+	}
+	.qua_top_slideCon {
+		overflow: hidden;
+		position: absolute;
+		height: 317px;
+		width: 280px;
+		left: 19px;
+		bottom: 22px;
+		background: #faf7f6;
+	}
+	.qua_top_slideCon>div{
+		width: 50%;
+		height: 317px;
+		float: left;
+		border-left:1px solid #f5f5f5;
+	}
+	.qua_top_slideCon_ul {
+		position: relative;
+		height: 100%;
+		float: left;
+		left: 24px;
+		top:10px;
+		margin-right: 120px;
+		transition: left .6s ease;
+	}
+	.qua_top_imgCon {
+		width: 90px;
+		height: 90px;
+		position: relative;
+		background-color: #fff;
+		box-shadow: 0 2px 20px 0 rgba(0,0,0,0.07);
+		margin-bottom: 11px;
+		cursor: pointer;
+	}
+	.qua_imgCon_font {
+		position: absolute;
+		font-size: 12px;
+		color: #fff;
+		width: 40px;
+		height: 16px;
+		text-align: center;
+		font-family: Tahoma;
+		font-weight: bold;
+	}
+	.qua_top_imgCon img {
+		margin-top: 15px;
+		margin-left: 15px;
+		width: 60px;
+		height: 60px;
+	}
+</style>
+<div class="container" style="width:100%; padding:0;margin:0;">
+	<div class="carousel slide" id="slidershow" data-ride="carousel" data-interval="2000" style="top:-10px;">
+		<!--计数器-->
+		<ol class="carousel-indicators">
+			<li class="active" data-target="#slidershow" data-slide-to="0"></li>
+			<li data-target="#slidershow" data-slide-to="1"></li>
+			<li data-target="#slidershow" data-slide-to="2"></li>
+			<li data-target="#slidershow" data-slide-to="3"></li>
+			
+		</ol>
+		<!--图片容器-->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="images/qiao/lunbo1.png"/>
+				<!--添加对应标题和内容-->
+				<div class="carousel-caption">
+			
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/qiao/lunbo2.png"/>
+				<!--添加对应标题和内容-->
+				<div class="carousel-caption">
+				
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/qiao/lunbo3.png"/>
+				<!--添加对应标题和内容-->
+				<div class="carousel-caption">
+				
+				</div>
+			</div>
+			<div class="item">
+				<img src="images/qiao/lunbo4.png"/>
+				<!--添加对应标题和内容-->
+				<div class="carousel-caption">
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div style="width:80%;margin:0 auto;margin-top:40px;" >
+	<img src="/images/qiao/14.png" alt="" style="width:100%;">
+</div>
+<div style="width:80%;margin:0 auto;margin-top:25px;">
+	<div class="index-red-bj">
+		<ul>
+			<li>
+				<div style="cursor: pointer;text-align: center;">
+					<img src="/images/qiao/15.png" alt="" style="width:129px;height:36px;margin-top:20px;">
+					<span class="sing_text_font">限时 限量 品质 超值</span>
+					<div style="width: 30px;height: 4px;background: #fff;margin-left: 54px;margin-top: 25px;"></div>
+					<img src="/images/qiao/shizhong.png" alt="" style="width: 24px;position: relative;right: 50px;top:15px">
+					<p style="font-size: 16px;color: #fff;position: relative;bottom:7px;left: 5px;">距结束仅剩</p>
+				</div>
+			</li>
+			<% for(var i=0;i<results.length;i++){ %>
+			<li>
+				<div style="background: #fff;width: 100%;height: 216px;cursor: pointer;"  class="dong">
+					<div class="single_top">
+						<img src="<%= results[i].img %>" alt="" style="width: 110px;height: 110px;position: absolute;top: 25px;left: 50px;margin-left: 15px;">
+					</div>
+				    <div class="single_bottom">
+                        <div class="s_title">
+							<%= results[i].miaoshu %>
+						</div>
+						<div class="s_con">
+                            <div class="s_num">
+								<span>￥</span>
+								<span style="margin-left: -5px;"><%= results[i].price %></span>
+								<span class="s_num_underline">
+									<span>￥</span>
+									<span style="margin-left: -5px;"><%= results[i].oldprice %></span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<% } %>
+			
+
+			
+		</ul>
+	</div>
+	<div style="height:100px;"></div>
+</div>
+
+
+<div style="background: #FFF;width: 80%;height: 421px;margin-left: 10%;overflow: hidden;">
+	<span class="qua_tit_spanFirst qua_tit_spanFirst_top" style="color:#B77347;margin-top: 17px;">品质进口</span>
+	<span class="qua_tit_spanLast" style="color:#cd9d7f;color:rgba(183,115,71,0.7)">/ 给你完美生活</span>
+
+	<div class="qua_show_con">
+		<img src="/images/qiao/pinzhijinkou.jpg" alt="" style="width: 189px;height: 334px;margin-top: 8px;float: left;">
+		<div class="qua_left_font_con">
+            <a href="" class="qua_left_f_con_font">进口饼干</a>
+			<a href="" class="qua_left_f_con_font">进口牛奶</a>
+			<a href="" class="qua_left_f_con_font">进口水</a>
+			<a href="" class="qua_left_f_con_font">进口糖巧</a>
+			<a href="" class="qua_left_f_con_font">葡萄酒</a>
+			<a href="" class="qua_left_f_con_font">进口油</a>
+		</div>
+
+		<div class="qua_show_con_right">
+            <a href="" class="import_snacks">
+				<p class="import_tit">进口休闲零食</p>
+				<p class="voucher_tit">爆款直降</p>
+				<div class="buy_btn">点击进入</div>
+				<img src="/images/qiao/lingshi.png" alt="">
+			</a>
+			<a href="" class="bursting" style="border-right:1px solid #f6f6f6">
+				<p class="burting_font" style="color: #333;">进口饼干</p>
+				<p class="bkzj" style="color: #999;">超值满减</p>
+				<img src="/images/qiao/binggan.jpg" alt="">
+			</a>
+			<a href="" class="bursting">
+				<p class="burting_font" style="color: #333;">进口牛奶</p>
+				<p class="bkzj" style="color: #999;">领券满减</p>
+				<img src="/images/qiao/niunai.jpg" alt="">
+			</a>
+			<a href="" class="bursting" style="border-right:1px solid #f6f6f6">
+				<p class="burting_font" style="color: #333;">品质洋酒</p>
+				<p class="bkzj" style="color: #999;">2件立减</p>
+				<img src="/images/qiao/yangjiu.jpg" alt="">
+			</a>
+			<a href="" class="bursting">
+				<p class="burting_font" style="color: #333;">进口米面</p>
+				<p class="bkzj" style="color: #999;">满减优惠</p>
+				<img src="/images/qiao/mimian.jpg" alt="">
+			</a>
+			<a href="" class="import_snacks">
+				<p class="import_tit">日本美妆</p>
+				<p class="voucher_tit">低至五折</p>
+				<div class="buy_btn">点击进入</div>
+				<img src="/images/qiao/meizhuang.png" alt="">
+			</a>
+		</div>
+	</div>
+
+	<div class="qua_top rank_list_class" id="qua_topId">
+		<p class="qua_top_font">进口食品热销榜</p>
+		<p>爆款热卖 实时更新</p>
+
+		<div class="qua_top_slideCon">
+
+			<div>
+				<ul class="qua_top_slideCon_ul">
+					<li class="qua_top_imgCon">
+						<div class="qua_imgCon_font" style="background: #f5c760;">TOP1</div>
+						<img src="/images/qiao/top1.jpg" alt="">
+					</li>
+					<li class="qua_top_imgCon">
+						<div class="qua_imgCon_font" style="background: #b1b3c2;">TOP2</div>
+						<img src="/images/qiao/top2.jpg" alt="">
+					</li>
+					<li class="qua_top_imgCon">
+						<div class="qua_imgCon_font" style="background: #d9c2b9;">TOP3</div>
+						<img src="/images/qiao/top3.jpg" alt="">
+					</li>
+				</ul>
+			</div>
+	        <div>
+				<ul class="qua_top_slideCon_ul">
+					<li class="qua_top_imgCon">
+						<div class="qua_imgCon_font" style="background: #a7a8ab;">TOP4</div>
+						<img src="/images/qiao/top4.jpg" alt="">
+					</li>
+					<li class="qua_top_imgCon">
+						<div class="qua_imgCon_font" style="background: #a7a8ab;">TOP5</div>
+						<img src="/images/qiao/top5.jpg" alt="">
+					</li>
+					<li class="qua_top_imgCon">
+						<div class="qua_imgCon_font" style="background: #a7a8ab;">TOP6</div>
+						<img src="/images/qiao/top6.jpg" alt="">
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div style="clear:both;"></div>
+<div style="height:100px;"></div>
+
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.js"></script>
+<script>
+var dong = document.querySelectorAll('.dong')
+for(var i=0;i<dong.length;i++){
+	dong[i].onmouseover=function(){
+		this.style.boxShadow='0 0 10px #b77347'
+		this.style.border='1px solid #b77347'
+		this.style.transition='500ms'
+	}
+	dong[i].onmouseleave=function(){
+		this.style.boxShadow='none'
+		this.style.border='none'
+		this.style.transition='500ms'
+	}
+}
+</script>
+<% include base/copyright.ejs %>
+<% include base/foot.ejs %>
