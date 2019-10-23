@@ -1,0 +1,50 @@
+<% include base/head.ejs %>
+<% include base/nav-index.ejs %>
+<% include base/nav-index2.ejs %>
+
+
+<div class="nav">
+    <div class="nav2">
+        <ul class="left">
+            <a href="/items"><li>超级单品</li></a>
+            <a href="/"><li class="one">超级品牌</li></a>
+            <a href="/classes"><li>超级品类</li></a>
+        </ul>
+    </div>
+</div>
+
+<div class="imgss">
+
+    <img src="images/zhao/super_bg.png" />
+</div>
+
+<div class="bbb">
+    <p>今日上线</p>
+	
+		<% for(var i=0;i<results.length;i++){ %>
+		<div class="bbb-left">
+			<div class="bbb-left-top">
+				<p class="left"><%= results[i].describe1 %></p>
+				<p class="right"><%= results[i].describe2 %></p>
+			</div>
+			<div class="bbb-left-img">
+				<img src="<%= results[i].img %>" />
+			</div>
+			<div class="bbb-left-botton">
+				<% for(var j=0;j<results[i].list.length;j++){ %>
+				<div class="bbb-left-botton-left">
+					<img src="<%= results[i].list[j].img %>" class="jjj"/>
+					<p class="money">￥<%= results[i].list[j].price %><del>￥<%= results[i].list[j].oldprice %></del></p>
+				</div>
+				<% } %>
+				
+			</div>
+		</div>
+		<% } %>
+  
+</div>
+
+
+
+<% include base/copyright.ejs %>
+<% include base/foot.ejs %>

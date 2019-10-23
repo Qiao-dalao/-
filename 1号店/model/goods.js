@@ -9,10 +9,12 @@ var mongooseSchema = new mongoose.Schema({
 	couponslist:String,
 	list:Object,
 	address:String,
-	username:String
+	username:String,
+	describe1:String,
+	describe2:String,
+	num:Number,
+	numnow:String
 	
 });
 var mongooseModel = mongoose.model('good', mongooseSchema);
 module.exports = mongooseModel
-
-
