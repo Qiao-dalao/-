@@ -1,7 +1,6 @@
 const goods = require('../model/goods')
 
 function a(req,res){
-<<<<<<< HEAD
 	goods.create({
 		"type":"全部商品",
 		"address":"金币商城",
@@ -223,7 +222,7 @@ function a(req,res){
 
 
 )
-=======
+
 	goods.create(
 		{
 			type:'猜你喜欢',
@@ -394,7 +393,7 @@ function a(req,res){
 			price:106,
 		}
 	)
->>>>>>> 6dc7b6f5c87026b61f9911e5028ffb88cce6b421
+
 	res.end('添加成功')
 }
 module.exports = a
