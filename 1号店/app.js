@@ -37,8 +37,10 @@ app.get('/robgolb',require('./routes/robgolb'))	//抢金币
 app.get('/golbsign',require('./routes/golbsign'))	//金币签到
 
 
+
 app.get('/recharge',require('./routes/recharge'))//充值
 app.get('/myorder',require('./routes/myorder'))//我的订单
+
 app.get('/login',require('./routes/login'))		//登录
 app.get('/register',require('./routes/register'))	//注册
 app.get('/notloginShopping',require('./routes/notloginShopping'))		//购物车未登录

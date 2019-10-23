@@ -1,3 +1,4 @@
+const goods = require('../model/goods.js')
 const users = require('../model/users')
 function loginShopping(req,res){
 	var str = req.cookies
@@ -6,6 +7,5 @@ function loginShopping(req,res){
 			name:name
 		})
 	})
-    
 }
 module.exports = loginShopping

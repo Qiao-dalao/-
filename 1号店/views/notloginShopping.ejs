@@ -53,14 +53,26 @@
             <img src="/images/rong/fangxiangyou.png" alt="" class="right">
         <div class="sale_prod_cont hot_sale_list" style="position: relative; padding: 0; width: 83%;margin:0 auto ;height: 520px;overflow: hidden;">
 
-            
-
             <div class="sale_scroll_box" style="height:520px;">
                 <ul class="sale_scroll_ul clearfix" style="width: 400%; margin-left: 0px;position: absolute;z-index: 5;top: 0;left: 0;" id="move">
                    
                     <% for(var i=0;i<results.length;i++){ %>
                     <li>
+                        <% for(var j=0;j<results[i].list.length;j++){ %>
                         <div class="sale_item">
+                            <div class="prod_img">
+                                <img src="<%= results[i].list[j].img %>" alt="" style="width: 150px;height: 150px;">
+                            </div>
+                            <div class="prod_info">
+                                <p class="p_pri">
+                                    ￥
+                                    <b><%= results[i].list[j].price %></b>
+                                </p>
+                                <p class="p_tit"><%= results[i].list[j].miaoshu %></p>
+                            </div>
+                        </div>
+                        <% } %>
+                        <!-- <div class="sale_item">
                             <div class="prod_img">
                                 <img src="<%= results[i].img %>" alt="" style="width: 150px;height: 150px;">
                             </div>
@@ -71,19 +83,7 @@
                                 </p>
                                 <p class="p_tit"><%= results[i].miaoshu %></p>
                             </div>
-                        </div>
-                        <div class="sale_item">
-                            <div class="prod_img">
-                                <img src="<%= results[i].img %>" alt="" style="width: 150px;height: 150px;">
-                            </div>
-                            <div class="prod_info">
-                                <p class="p_pri">
-                                    ￥
-                                    <b><%= results[i].price %></b>
-                                </p>
-                                <p class="p_tit"><%= results[i].miaoshu %></p>
-                            </div>
-                        </div>
+                        </div> -->
                     </li>
                     <% } %>
 
@@ -157,6 +157,7 @@ for(var i=0;i<reddian.length;i++){
         this.style.background='#ff5e5e'
         move.style.transition='500ms'
         move.style.left=-this.index*224*4+'px'
+        m = this.index
     }
 }
 </script>
