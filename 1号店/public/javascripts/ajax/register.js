@@ -7,9 +7,9 @@ $('form').on('submit',(e)=>{
 		success:function(data){
 			layer.msg(data.msg)
 			if(data.code){
-				// setTimeout(()=>{
-				//     location.href = '/'
-				// },2000)
+				setTimeout(()=>{
+				    location.href = '/login'
+				},1000)
 			}
 		},
 		err:(err)=>{

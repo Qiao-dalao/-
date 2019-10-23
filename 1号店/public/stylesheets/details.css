@@ -50,7 +50,7 @@
     color:#555 !important;
 }
 .bigbox{
-    width:90%;
+    width:70%;
     height: 800px;
     /* background:lightcoral; */
     margin:0 auto;
@@ -61,7 +61,7 @@
     border:1px solid #DDDDDD;
     background:url(/images/han/1.jpg);
     float:left;
-    margin-top: 50px;
+    margin-top: 100px;
     position:relative;
     background-size: 100%;
     display:flex;
