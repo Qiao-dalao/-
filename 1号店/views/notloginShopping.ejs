@@ -1,0 +1,164 @@
+<% include base/head.ejs %>
+<% include base/nav-notloginShopping.ejs %>
+<link rel="stylesheet" href="/stylesheets/rong/notloginShopping.css">
+<div class="box">
+    <div class="wrap">
+        <h1 style="float: left;padding-top: 10px;">
+            <a href="index">
+                <img src="/images/rong/logo1.png" alt="" class="logo">
+            </a>
+            <img src="/images/rong/logo_txt.png" alt="" class="logo_txt">
+        </h1>
+        <!-- 搜索框 -->
+        <div class="search">
+            <input type="text" placeholder="请输入关键词">
+            <a href="">
+                <img src="/images/rong/sousuo1.png" alt="" class="search_btn iconfont">
+            </a>
+        </div>
+    </div>
+
+    <div class="empty">
+        <div class="no_prod offline clearfix">
+            <div class="img_wrap">
+                <img src="/images/rong/offline.gif" alt="" style="width: 300px;height: 300px;">
+            </div>
+            <div class="info" style="float: left;">
+                <p>
+                    购物车还是空的呢，快去采购吧~
+                    <br>
+                    或者登录查看之前加入的商品。
+                </p>
+                <div class="btn_box">
+                    <a href="login" class="confirm">登录</a>
+                    <a href="index" class="cancel">去逛逛</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 猜你喜欢 -->
+    <div class="sale_prod_list">
+        <div class="sale_prod_tit">
+            <h4 class="hot_sale_tit">
+                <img src="/images/rong/cainixihuan.png" alt="">
+                猜您喜欢
+            </h4>
+            <p>实时推荐最适合您的商品</p>
+        </div>
+
+
+        <div style="width: 90%;margin:0 auto;position: relative;" class="cheap_prod">
+            <img src="/images/rong/fangxiangzuo.png" alt="" class="left">
+            <img src="/images/rong/fangxiangyou.png" alt="" class="right">
+        <div class="sale_prod_cont hot_sale_list" style="position: relative; padding: 0; width: 83%;margin:0 auto ;height: 520px;overflow: hidden;">
+
+            
+
+            <div class="sale_scroll_box" style="height:520px;">
+                <ul class="sale_scroll_ul clearfix" style="width: 400%; margin-left: 0px;position: absolute;z-index: 5;top: 0;left: 0;" id="move">
+                   
+                    <% for(var i=0;i<results.length;i++){ %>
+                    <li>
+                        <div class="sale_item">
+                            <div class="prod_img">
+                                <img src="<%= results[i].img %>" alt="" style="width: 150px;height: 150px;">
+                            </div>
+                            <div class="prod_info">
+                                <p class="p_pri">
+                                    ￥
+                                    <b><%= results[i].price %></b>
+                                </p>
+                                <p class="p_tit"><%= results[i].miaoshu %></p>
+                            </div>
+                        </div>
+                        <div class="sale_item">
+                            <div class="prod_img">
+                                <img src="<%= results[i].img %>" alt="" style="width: 150px;height: 150px;">
+                            </div>
+                            <div class="prod_info">
+                                <p class="p_pri">
+                                    ￥
+                                    <b><%= results[i].price %></b>
+                                </p>
+                                <p class="p_tit"><%= results[i].miaoshu %></p>
+                            </div>
+                        </div>
+                    </li>
+                    <% } %>
+
+                </ul>
+            </div>
+
+
+            <div class="view_dot">
+                <span class="cur reddian"></span>
+                <span class="reddian"></span>
+                <span class="reddian"></span>
+                <span class="reddian"></span>
+            </div>
+
+        </div>
+        </div>
+    </div>
+    <div style="height: 10px;"></div>
+</div>
+<script>
+var right = document.querySelector('.right')
+var left = document.querySelector('.left')
+var move = document.querySelector('#move')
+var reddian = document.querySelectorAll('.reddian')
+
+var m=0
+right.onclick=function(){
+
+    if(m == 3){
+        m==3
+    }else{
+        for(var i=0;i<reddian.length;i++){
+            reddian[i].style.width='10px'
+            reddian[i].style.background='#e5e5e5'
+        }
+        m++
+        move.style.transition='500ms'
+        move.style.left=-m*224*4+'px'
+        reddian[m].style.width='18px'
+        reddian[m].style.background='#ff5e5e'
+   
+    }
+    
+}
+left.onclick=function(){
+    
+    if(m==0){
+        m==0
+    }else{
+        for(var i=0;i<reddian.length;i++){
+            reddian[i].style.width='10px'
+            reddian[i].style.background='#e5e5e5'
+        }
+        m--
+        move.style.transition='500ms'
+        move.style.left=-m*224*4+'px'
+        reddian[m].style.width='18px'
+        reddian[m].style.background='#ff5e5e'
+    }
+    
+
+}
+for(var i=0;i<reddian.length;i++){
+    reddian[i].index=i
+    reddian[i].onclick=function(){
+        for(var j=0;j<reddian.length;j++){
+            reddian[j].style.width='10px'
+            reddian[j].style.background='#e5e5e5'
+        }
+        this.style.width='18px'
+        this.style.background='#ff5e5e'
+        move.style.transition='500ms'
+        move.style.left=-this.index*224*4+'px'
+    }
+}
+</script>
+<% include base/copyright.ejs %>
+<% include base/foot.ejs %>
