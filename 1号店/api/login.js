@@ -5,8 +5,8 @@ function login(req,res){
 	users.findOne({"username":req.body.username,"password":req.body.password})
 		.then((result)=>{
             if(result){
-				let data = {"username": req.body.username}
-				res.cookie('name',JSON.stringify(data));
+				
+				res.cookie('_id',result._id.toString());
                 res.json({
                     code:1,
                     msg: '登录成功',

@@ -1,7 +1,11 @@
+const users = require('../model/users')
 function robgolb(req,res){
-	res.render('robgolb',{
-
-		title: '1号店(yhd.com)_全球超市，轻松到家！' 
+	var str = req.cookies
+	console.log(str)
+	users.find(str).then((name)=>{
+		res.render('robgolb',{
+			name:name
+		})
 	})
 }
 module.exports = robgolb

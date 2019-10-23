@@ -29,7 +29,7 @@
 				</ul>
 			</div>
 			
-			<p class="shopcar" style="margin:0;">购物车</p>
+			<p class="shopcar" style="margin:0;cursor: pointer;" >购物车</p>
 		</div>
 		
 		
@@ -51,3 +51,24 @@
 		</div>
 	</div>
 </div>
+
+<script>
+var shopcar = document.querySelector('.shopcar')
+shopcar.onclick=function(){
+	var str = document.cookie
+	var arr = str.split(';')
+	var boo = false
+	for (var i=0;i<arr.length;i++) {
+		arr[i] = arr[i].trim().split('=') 
+		if (arr[i][0] === '_id') {
+			boo=true
+			location.href='/loginShopping'
+		} 
+	}
+	if (!boo) {
+	   location.href='/notloginShopping'
+	}
+	console.log(arr)	
+	
+}
+</script>
