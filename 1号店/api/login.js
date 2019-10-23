@@ -11,8 +11,10 @@ function login(req,res){
                     code:1,
                     msg: '登录成功',
 					
+					
                 })
             }else{
+				console.log('222222222')
                 res.json({
                     code:0,
                     msg: '账户/密码错误'

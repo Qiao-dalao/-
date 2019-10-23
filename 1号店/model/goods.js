@@ -8,7 +8,9 @@ var mongooseSchema = new mongoose.Schema({
 	oldprice:Number,
 	couponslist:String,
 	list:Object,
-	address:String
+	address:String,
+	username:String
+	
 });
 var mongooseModel = mongoose.model('good', mongooseSchema);
 module.exports = mongooseModel

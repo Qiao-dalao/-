@@ -12,10 +12,11 @@ function get(){
         if (arr[i][0] === 'name') {
             var user = JSON.parse(unescape(arr[i][1]))
             boo=true
+			
         } 
     }
     if (!boo) {
-        // location.href = '/login'
+        location.href = '/login'
     }
     console.log(arr)
 }
