@@ -7,7 +7,8 @@ var mongooseSchema = new mongoose.Schema({
 	golb:Number,
 	oldprice:Number,
 	couponslist:String,
-	list:Object
+	list:Object,
+	address:String
 });
 var mongooseModel = mongoose.model('good', mongooseSchema);
 module.exports = mongooseModel
