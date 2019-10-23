@@ -40,10 +40,6 @@ app.get('/recharge',require('./routes/recharge'))//充值
 app.get('/myorder',require('./routes/myorder'))//我的订单
 
 
-app.get('/recharge',require('./routes/recharge'))//充值
-app.get('/myorder',require('./routes/myorder'))//我的订单
-
-
 app.get('/login',require('./routes/login'))		//登录
 
 
@@ -51,8 +47,6 @@ app.get('/register',require('./routes/register'))	//注册
 app.get('/notloginShopping',require('./routes/notloginShopping'))		//购物车未登录
 app.get('/loginShopping',require('./routes/loginShopping'))	//购物车已登录
 
-
-app.use('/', indexRouter);	//主页
 
 
 //功能路由
