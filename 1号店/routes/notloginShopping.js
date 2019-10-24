@@ -1,7 +1,7 @@
 const goods = require('../model/goods.js')
 const users = require('../model/users')
 function notloginShopping(req,res){
-    goods.find({type:'猜你喜欢'}).then(async (result)=>{
+    goods.find({type:'猜你喜欢'}).then(async (results)=>{
         var str = req.cookies
         var name = await users.find({'_id':str._id})
         if(name.length==0){
