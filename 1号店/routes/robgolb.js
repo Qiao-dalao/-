@@ -1,11 +1,11 @@
 const users = require('../model/users')
-function robgolb(req,res){
+async function robgolb(req,res){
 	var str = req.cookies
 	console.log(str)
-	users.find(str).then((name)=>{
+	var name = await users.find({'_id':str._id})
 		res.render('robgolb',{
 			name:name
 		})
-	})
+	
 }
 module.exports = robgolb

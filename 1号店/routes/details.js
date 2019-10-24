@@ -6,8 +6,9 @@ const goods = require('../model/goods')
 
 function details(req,res){
 	var str = req.cookies
-	users.find(str).then((name)=>{
-		goods.find({"id":req.params.type}).then((good)=>{
+		
+		goods.find({"id":req.params.type}).then(async (good)=>{
+			var name = await users.find({'_id':str._id})
 			res.render('details',{
 				id:req.params.type,
 				name:name,
@@ -15,7 +16,7 @@ function details(req,res){
 			})
 		})
 		
-	})
+	
     
 }
 module.exports=details
