@@ -52,7 +52,7 @@ app.get('/details/:type',require('./routes/details'));	//详情页
 app.get('/add',require('./api/add'))
 app.use('/user/login',require('./api/login'))
 app.use('/user/register',require('./api/register'))
-
+app.use('/ceshi',require('./api/ceshi'))
 
 app.use('/', indexRouter);	//主页
 // catch 404 and forward to error handler

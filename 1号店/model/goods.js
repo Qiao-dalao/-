@@ -14,7 +14,8 @@ var mongooseSchema = new mongoose.Schema({
 	describe2:String,
 	num:Number,
 	numnow:String,
-	id:Number
+	id:Number,
+	u:String
 	
 });
 var mongooseModel = mongoose.model('good', mongooseSchema);
