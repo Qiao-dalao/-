@@ -1,0 +1,59 @@
+<% include base/head.ejs %>
+<% include base/nav-index.ejs %>
+<% include base/nav-index2.ejs %>
+
+
+<div id="nav">
+    <div id="nav2">
+        <ul class="left">
+            <a href="/"><li class="one">超级单品</li></a>
+            <a href="/brands"><li>超级品牌</li></a>
+            <a href="/classes"><li>超级品类</li></a>
+        </ul>
+        <ul class="right">
+            <li>食品饮料</li>
+            <li>美妆个护</li>
+            <li>中外名酒</li>
+            <li>母婴儿童</li>
+            <li>生鲜果蔬</li>
+            <li>手机数码</li>
+            <li>家用电器</li>
+        </ul>
+        <div style="clear: both;"></div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+
+<div id="box">
+    <div id="ps"></div>
+    <div id="selected"><img src="images/zhao/clock.png" class="imgs" />&nbsp;<span class="fontsize">精选抢购</span></div>
+    <div id="buy">
+        <div id="buy-left">抢购中</div>
+        <div id="buy-right">即将开抢</div>
+        <div id="buy-right-right">自营</div>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="goods">
+		<% for(var i=0;i<results.length;i++){ %>
+        <div class="goods-main1">
+            <div class="imgs-top">
+                <img src="<%= results[i].img %>" width="242px" />
+                <p><%= results[i].miaoshu %></p>
+            </div>
+            <div class="imgs-botton">
+                <p>已售<%= results[i].num %>%</p>
+                <div class="absolutely">
+                    <div class="color" style="width:<%= results[i].numnow %>"></div>
+                </div>
+                <p clas="big"><span class="bigbig">￥<%= results[i].price %></span><del>￥<%= results[i].oldprice %></del></p>
+            </div>
+        </div>
+		<% } %>
+    </div>
+</div>
+<div></div>
+<% include base/copyright.ejs %>
+<% include base/foot.ejs %>
+
+

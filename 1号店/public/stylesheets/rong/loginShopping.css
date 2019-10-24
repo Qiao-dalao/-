@@ -3,7 +3,7 @@
     padding: 0;
 }
 .wrap{
-    width: 1210px;
+    width: 80%;
     margin: 0 auto;
 }
 .box{
@@ -14,6 +14,46 @@
 a {
     text-decoration: none;
     color: #333;
+}
+.allchose-input{
+    outline: none;
+    transform: translate(30%,35%);
+}
+.allchose-input::after{
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    
+}
+.static-li{
+    line-height: 50px;
+    color: #666;
+    font-size: 12px;
+}
+.allchose-input:checked::after{
+    background: url(/images/qiao/chose.jpg) no-repeat;
+    background-size: 100%;
+    background-color: #FF5E5E;
+    background-position-y: 1px;
+  
+}
+.allchone{
+    outline: none;
+    border: none;
+}
+
+.chose{
+    width:80% ;
+    margin: 0 auto;
+    height: 50px;
+    background: white;
+    border: 1px solid #DFDFDF;
+    border-radius: 5px;
 }
 .logo {
     float: left;

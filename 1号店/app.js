@@ -40,12 +40,13 @@ app.get('/golbsign',require('./routes/golbsign'))	//金币签到
 
 app.get('/recharge',require('./routes/recharge'))//充值
 app.get('/myorder',require('./routes/myorder'))//我的订单
-app.get('/details',require('./routes/details'))	//详情页
+
 
 app.get('/login',require('./routes/login'))		//登录
 app.get('/register',require('./routes/register'))	//注册
 app.get('/notloginShopping',require('./routes/notloginShopping'))		//购物车未登录
 app.get('/loginShopping',require('./routes/loginShopping'))	//购物车已登录
+app.get('/details/:type',require('./routes/details'));	//详情页
 
 //功能路由
 app.get('/add',require('./api/add'))
@@ -71,3 +72,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+
+
