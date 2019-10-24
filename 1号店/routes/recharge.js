@@ -1,10 +1,10 @@
 const users = require('../model/users')
-function recharge(req,res){
+async function recharge(req,res){
     var str = req.cookies
-    users.find(str).then((name)=>{
+    var name = await users.find({'_id':str._id})
     	res.render('recharge',{
     		name:name
     	})
-    })
+    
 }
 module.exports = recharge;
