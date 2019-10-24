@@ -1,6 +1,10 @@
+const goods = require('../model/goods')
 function items(req,res){
-	res.render('items',{
-		
+	goods.find({type:'超级单品抢购'}).then((result)=>{
+		res.render('items',{
+			results:result
+		})
 	})
+	
 }
 module.exports = items

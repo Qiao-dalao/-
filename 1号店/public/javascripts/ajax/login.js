@@ -7,6 +7,7 @@ $('form').on('submit',(e)=>{
 		success:function(data){
 			layer.msg(data.msg)
 			if(data.code){
+				
 				setTimeout(()=>{
 				    location.href = '/'
 				},2000)
@@ -14,6 +15,7 @@ $('form').on('submit',(e)=>{
 		},
 		err:(err)=>{
 			console.log(err);
+		
 		}
 	})
 })

@@ -7,18 +7,28 @@
 <div class="nav">
 	<div class="navmain">
 		<div class="nav-bj">
+            <img src="/images/rong/shouye.png" alt="" style="margin-right:5px;margin-top: 9px;width: 12px;height: 12px;"></i>
+            <p><a href="/" style="color:black;text-decoration: none;">1号店首页</a></p>
 			<img src="/images/rong/shouye.png" alt="" style="margin-right:5px;margin-top: 9px;width: 12px;height: 12px;">
-			<a href="index">
-				<p class="shouye" style="cursor: pointer;">1号店首页</p>
-			</a>
+			
 			<i class="fa fa-map-marker" aria-hidden="true" style="line-height:30px;margin-right:5px;color:#ff4040;"></i>
 			<p>送货地址:上海</p>
 		</div>
 		<div class="nav-bj">
-			<p>Hi,请<span class="login">&nbsp;登录</span></p>
-			<p class="hover">注册</p>
+			
+			<p class='al-login' style='display:none;'><%= name[0].name %></p>
+			<p class='nologin' style='display:none;'>Hi,请<span class="login">&nbsp;<a href="/login" style="color:red;text-decoration: none;">登录</a></span></p>
+			<p class="hover nologin" style='display:none;'>注册</p>
+			
+			
 			<p>会员俱乐部</p>
 			<p>我的订单</p>
 		</div>
 	</div>
 </div>
+
+
+<script src='javascripts/nav/nav-coupons.js'></script>
+
+
+

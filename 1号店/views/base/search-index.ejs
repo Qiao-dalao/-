@@ -29,7 +29,7 @@
 				</ul>
 			</div>
 			
-			<p class="shopcar" style="margin:0;">购物车</p>
+			<p class="shopcar" style="margin:0;cursor: pointer;" >购物车</p>
 		</div>
 		
 		
@@ -40,14 +40,35 @@
 		<div class="index-list-two">
 			<p class="index-all">全部类目</p>
 			<ul class="index-list-two-ul">
-				<li><a href="">抢金币</a></li>
-				<li><a href="">金币签到</a></li>
-				<li><a href="">充值</a></li>
+				<li><a href="/robgolb">抢金币</a></li>
+				<li><a href="/golbsign">金币签到</a></li>
+				<li><a href="/recharge">充值</a></li>
 				<li><a href="">超级单品</a></li>
 				<li><a href="">超级品牌</a></li>
 				<li><a href="">超级品类</a></li>
-				<li><a href="">领券中心</a></li>
+				<li><a href="/coupons">领券中心</a></li>
 			</ul>
 		</div>
 	</div>
 </div>
+
+<script>
+var shopcar = document.querySelector('.shopcar')
+shopcar.onclick=function(){
+	var str = document.cookie
+	var arr = str.split(';')
+	var boo = false
+	for (var i=0;i<arr.length;i++) {
+		arr[i] = arr[i].trim().split('=') 
+		if (arr[i][0] === '_id') {
+			boo=true
+			location.href='/loginShopping'
+		} 
+	}
+	if (!boo) {
+	   location.href='/notloginShopping'
+	}
+	console.log(arr)	
+	
+}
+</script>
