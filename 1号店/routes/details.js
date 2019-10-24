@@ -9,14 +9,22 @@ function details(req,res){
 		
 		goods.find({"id":req.params.type}).then(async (good)=>{
 			var name = await users.find({'_id':str._id})
-			res.render('details',{
-				id:req.params.type,
-				name:name,
-				good:good
-			})
+			if(name.length==0){
+				res.render('details',{
+					id:req.params.type,
+					good,
+					name:[{name:'注册 登录'}]
+				}) 
+			}else{
+				res.render('details',{
+					id:req.params.type,
+					good,
+					name
+				}) 
+			}
 		})
 		
-	
+
     
 }
 module.exports=details

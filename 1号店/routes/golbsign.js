@@ -5,13 +5,19 @@ function golbsign(req,res){
 	goods.find({address:"金币商城"}).then(async(result)=>{
 		var str = req.cookies
 		var name = await users.find({'_id':str._id})
+		if(name.length==0){
 			res.render('golbsign',{
-				title: '1号店(yhd.com)_全球超市，轻松到家！' ,
-				result:result,
-				name:name
-			})
-		
-		
+				id:req.params.type,
+				result,
+				name:[{name:'注册 登录'}]
+			}) 
+		}else{
+			res.render('golbsign',{
+				id:req.params.type,
+				result,
+				name
+			}) 
+		}	
 	})
 	
 }

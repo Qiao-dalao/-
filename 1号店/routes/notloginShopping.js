@@ -4,10 +4,20 @@ function notloginShopping(req,res){
     goods.find({type:'猜你喜欢'}).then(async (result)=>{
         var str = req.cookies
         var name = await users.find({'_id':str._id})
-			res.render('notloginShopping',{
-			    results:result,
-				name:name
-			})
+        if(name.length==0){
+            res.render('notloginShopping',{
+                id:req.params.type,
+                results,
+                name:[{name:'注册 登录'}]
+            }) 
+        }else{
+            res.render('notloginShopping',{
+                id:req.params.type,
+                results,
+                name
+            }) 
+        }
+			
 		
 		
     });     

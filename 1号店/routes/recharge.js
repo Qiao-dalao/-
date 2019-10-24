@@ -1,10 +1,19 @@
 const users = require('../model/users')
 async function recharge(req,res){
     var str = req.cookies
-    var name = await users.find({'_id':str._id})
-    	res.render('recharge',{
-    		name:name
-    	})
+	var name = await users.find({'_id':str._id})
+	if(name.length==0){
+		res.render('recharge',{
+			id:req.params.type,
+			name:[{name:'注册 登录'}]
+		}) 
+	}else{
+		res.render('recharge',{
+			id:req.params.type,
+			name
+		}) 
+	}
+    
     
 }
 module.exports = recharge;
