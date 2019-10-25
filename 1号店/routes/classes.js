@@ -17,6 +17,6 @@ function classes(req,res){
 		}
 		
 	})
-	
+
 }
 module.exports = classes
