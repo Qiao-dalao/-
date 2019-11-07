@@ -1,0 +1,106 @@
+<% include base/head.ejs %>
+<link rel="stylesheet" href="/stylesheets/sureorder.css">
+<div class="sureorder-main">
+    <div>
+        <img src="/images/rong/logoorder.png" alt="">
+        <img src="/images/rong/sureorder.png" alt="">
+    </div>
+    <br><br>
+    <div>
+        <div class="shouhuoxinxi box">
+            <div class="hasredcss">收货信息<div class="redcss"></div>
+        </div>
+        <textarea name="" id="" class="dizhimain"></textarea>
+    </div>
+    <br /> 
+    <div>
+        <div class="shouhuoxinxi box" style="height: 120px;">
+            <div class="hasredcss">支付方式<div class="redcss"></div>
+        </div>
+        <p class="waybox">在线支付</p>
+    </div>
+    <br /> 
+    <div>
+        <div class="box" style="background: white;">
+            <div class="hasredcss">配送清单 <a class="back" style="cursor: pointer;font-size:12px;float: right;margin-right: 20px;text-decoration: none;color: #0066cc;">返回购物车修改</a><div class="redcss"></div>
+            
+        </div>
+        <div class="goodxinxi">
+            <div class="goodxinxi-left" style="width: 40%;border-right: 1px solid #e6e6e6;">
+                <p style="font-weight: bolder;color: #666;font-size: 12px;margin: 20px 20px;">配送方式</p>
+                <p class="waybox" style="background: white;margin:20px 20px ;">第三方配送</p>
+            </div>
+            <div class="goodxinxi-right">
+                <br>
+                <% for(var i=0;i<goods.length;i++){ %>
+                <div class="goodxinxione" style="display: flex;justify-content: space-around;">
+                    <div style="display: flex;width:70%">
+                        <img src="<%= goods[i].img %>" alt="" width="50px;" height="50px;">
+                        <p class="miaoshu" style="width:80%"><%= goods[i].miaoshu %></p>
+                    </div>
+                    <p style="width: 20%;font-size: 12px;margin-left: 50px;">X<%= goods[i].num %></p>
+                    <p style="width: 10%;font-size: 12px;">有货</p>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        
+        <div style="height: 30px;"></div>
+    </div>
+    <div>
+            <div class="pay">
+                <p class="price">还需支付<br><span style="font-size: 25px;color: #ff6c6c;"><b style="font-size: 14px;">￥</b><%= allprice %><span></p>
+                <p class="tijiaoorder">提交订单</p>
+            </div>
+        </div>
+  
+</div>
+<div style="height: 30px;"></div>
+<div style="display: flex;" class="paytime">
+</div>
+
+
+<script>
+var back = document.querySelector('.back')
+var paytime = document.querySelector('.paytime')
+back.onclick=function(){
+    location.href='/loginShopping'
+}
+var tijiao = document.querySelector('.tijiaoorder')
+tijiao.onclick=function(){
+    var now = new Date();
+    var year = now.getFullYear(); //得到年份
+    var month = now.getMonth()+1;//得到月份
+    var date = now.getDate();//得到日期
+    var day = now.getDay();//得到周几
+    var hour= now.getHours();//得到小时数
+    var minute= now.getMinutes();//得到分钟数
+    if(day == 0){
+        paytime.innerHTML= year+'年'+month+'月'+date+'日'+'星期日'+hour+'点'+minute+'分'
+    }else{
+        paytime.innerHTML= year+'年'+month+'月'+date+'日'+'星期'+ day+hour+'点'+minute+'分'
+    }
+    var xhr
+    if(XMLHttpRequest){
+        xhr = new XMLHttpRequest()
+    }else{
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhr.open('POST','/payorder',true)    //true表示异步
+    xhr.setRequestHeader('content-type','application/x-www-form-urlencoded')
+    xhr.send(`paytime=${paytime.innerHTML}`)  //发送请求
+    //接收响应
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4){
+            //代表响应就绪
+            if(xhr.status==200){
+                location.href='/myorder/'+paytime.innerHTML
+            }
+        }
+    }
+
+
+
+}
+</script>
+<% include base/foot.ejs %>

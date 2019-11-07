@@ -5,7 +5,7 @@ var arr = str.split(';')
 var boo = false
 for (var i=0;i<arr.length;i++) {
 	arr[i] = arr[i].trim().split('=') 
-	if (arr[i][0] === '_id') {
+	if (arr[i][0] === '_id' && arr[i][1] !=0) {
 		boo=true
 		for(var i=0;i<nologin.length;i++){
 			nologin[i].style.display='none';

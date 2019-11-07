@@ -16,13 +16,14 @@
                 <img src="/images/rong/sousuo1.png" alt="" class="search_btn iconfont">
             </a>
         </div>
+        </div>
     </div>
     <div style="clear: both;"></div>
     <div class="no-empty">
         <div class="chose">
             <ul style="display: flex;justify-content: space-around;">
                 <li style="line-height: 50px;display: flex;justify-content: space-around;width: 8%;">
-                    <input type="checkbox" name=""  class="allchose-input" id="" style="appearance: none;-webkit-appearance: none;">
+                    <input type="checkbox" name=""  class="allchose-input quanxuan" id="" style="appearance: none;-webkit-appearance: none;">
                     <span style="font-size: 12px;color: #666;line-height: 50px;">全选</span>
                 </li>
                 <li style="width:20%;" class="static-li">商品信息</li>
@@ -34,46 +35,55 @@
         </div>
 
         <div class="cart_list">
+            <% for(var i=0;i<shopcargood.length;i++){ %>
+            <div class="everyxinxi" id="<%= shopcargood[i].id %>">
             <div class="cart_list_wrap">
                 <ul class="cart_item activity">
-
-                    <li class="cart_activity">
-                        <div class="cart_prod ">
-                            <input type="checkbox" name="" class="allchose-input" id="" style="appearance: none;-webkit-appearance: none;margin-left: 11px;">
-                            <div class="activity_wrap">
-                                <!-- <em class="line_ver"></em> -->
-                                <span class="tag">跨自营/店铺满减</span>
-                                <span class="tit">指定商品满99元减50元，满199元减100元</span>
-                                <em class="cut"></em>
-                                <span class="state">
-                                    已购
-                                    <em class="has">28.90</em>
-                                    元，还差
-                                    <em>70.10</em>
-                                    元
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-
                     <li class="item item_line main_item clearfix">
                         <div class="cart_prod clearfix">
-                            <input type="checkbox" name="" class="allchose-input" id="" style="appearance: none;-webkit-appearance: none;margin-left: 11px;">
-                            <img src="/images/rong/gouwuchetu.jpg" alt="" class="item_pic">
-                            <span class="item_tit">马来西亚进口 马奇新新 巧克力夹心巧心卷饼干 80g x 3 鸡蛋卷酥 休闲零食 量贩分享装 零食礼包</span>
-                            <p class="item_price">28.90</p>
-                            <div class="num_act clearfix">
-
-                            </div>
-                            <img src="/images/rong/shanchuhui.png" alt="">
-                            <img src="/images/rong/shanchuhong.png" alt="">
+                            <ul style="display: flex; justify-content: space-between;align-items: center;">
+                                <li style="width: 0.1%;" >
+                                    <input type="checkbox" name="" class="allchose-input checkbox" id="" style="appearance: none;-webkit-appearance: none;margin-left: 11px;">
+                                </li>
+                                <li style="width: 34%;display: flex;align-items: center;">
+                                    <p><img src="<%= shopcargood[i].img %>" alt="" style="width: 120px;"></p>
+                                    <p style="font-size: 12px;width: 90%;margin-left: 5px;line-height: 20px;"><%= shopcargood[i].miaoshu %></p>
+                                </li>
+                                <li class="oneprice">
+                                    <p class="price"><%= shopcargood[i].price %></p>
+                                </li>
+                                <li style="display: flex;width: 8%;">
+                                    <div class="add" type="addclick">
+                                        +
+                                    </div>
+                                    <input type="text" value='<%= shopcargood[i].num %>' style="width: 20px;height: 18px;padding-left: 18%;" class="number">
+                                    <div class="jian">
+                                        -
+                                    </div>
+                                </li>
+                                <li style="margin-right: 25px;width: 8%;">
+                                    <p class="xiaoji"><%=  shopcargood[i].xiaoji %></p>
+                                </li>
+                                <li style="margin-right: 30px;" class="delanniu">
+                                    <img src="/images/rong/shanchuhui.png" alt="" class='del' style="display: block;">
+                                    <img src="/images/rong/shanchuhong.png" alt="" class="delred" style="display: none;">
+                                </li>
+                            </ul>
                         </div>
                     </li>
-     
                 </ul>
             </div>
+            </div>
+            <% } %>
 
         </div>
+        <div class="chose">
+                <ul class="shopcar-bottom">
+                    <li>合计:</li>
+                    <li>￥<span class="allprice">0</span></li>
+                    <li class="jiesuan">去结算</li>
+                </ul>
+            </div>
     </div>
     <div class="empty">
         <div class="no_prod offline clearfix">
@@ -131,8 +141,6 @@
 
                 </ul>
             </div>
-
-
             <div class="view_dot">
                 <span class="cur reddian"></span>
                 <span class="reddian"></span>
@@ -144,71 +152,8 @@
         </div>
     </div>
     <div style="height: 10px;"></div>
+    <p style="display: none;" id="panduan"><%= msg %></p>
 </div>
-<script>
-var right = document.querySelector('.right')
-var left = document.querySelector('.left')
-var move = document.querySelector('#move')
-var reddian = document.querySelectorAll('.reddian')
-
-var m=0
-right.onclick=function(){
-
-    if(m == 3){
-        m==3
-    }else{
-        for(var i=0;i<reddian.length;i++){
-            reddian[i].style.width='10px'
-            reddian[i].style.background='#e5e5e5'
-        }
-        m++
-        move.style.transition='500ms'
-        move.style.left=-m*224*4+'px'
-        reddian[m].style.width='18px'
-        reddian[m].style.background='#ff5e5e'
-   
-    }
-    
-}
-left.onclick=function(){
-    
-    if(m==0){
-        m==0
-    }else{
-        for(var i=0;i<reddian.length;i++){
-            reddian[i].style.width='10px'
-            reddian[i].style.background='#e5e5e5'
-        }
-        m--
-        move.style.transition='500ms'
-        move.style.left=-m*224*4+'px'
-        reddian[m].style.width='18px'
-        reddian[m].style.background='#ff5e5e'
-    }
-    
-
-}
-for(var i=0;i<reddian.length;i++){
-    reddian[i].index=i
-    reddian[i].onclick=function(){
-        for(var j=0;j<reddian.length;j++){
-            reddian[j].style.width='10px'
-            reddian[j].style.background='#e5e5e5'
-        }
-        this.style.width='18px'
-        this.style.background='#ff5e5e'
-        move.style.transition='500ms'
-        move.style.left=-this.index*224*4+'px'
-        m = this.index
-    }
-}
-var saleitem = document.querySelectorAll('.sale_item')
-for(var i=0;i<saleitem.length;i++){
-
-saleitem[i].onclick=function(){
-
-}
-}
-</script>
+<script src='/javascripts/rong/loginShopping.js'></script>
 <% include base/copyright.ejs %>
 <% include base/foot.ejs %>

@@ -5,7 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser = require('body-parser')
 const db = require('./model/db')
+// var AlipaySdk = require('alipay-sdk').default
+// var aliService = require('../service/aliPay')
 var app = express();
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
  
@@ -39,20 +42,30 @@ app.get('/golbsign',require('./routes/golbsign'))	//金币签到
 
 
 app.get('/recharge',require('./routes/recharge'))//充值
-app.get('/myorder',require('./routes/myorder'))//我的订单
+app.get('/myorder/:type',require('./routes/myorder'))//我的订单
 
 
 app.get('/login',require('./routes/login'))		//登录
 app.get('/register',require('./routes/register'))	//注册
 app.get('/notloginShopping',require('./routes/notloginShopping'))		//购物车未登录
+app.get('/loginShopping/:id',require('./routes/loginShopping'))	//购物车已登录
 app.get('/loginShopping',require('./routes/loginShopping'))	//购物车已登录
 app.get('/details/:type',require('./routes/details'));	//详情页
+app.get('/sureorder',require('./routes/sureorder')) //确认订单页
+
 
 //功能路由
 app.get('/add',require('./api/add'))
 app.use('/user/login',require('./api/login'))
 app.use('/user/register',require('./api/register'))
 app.use('/ceshi',require('./api/ceshi'))
+app.post('/numadd',require('./api/numadd'))  //数量增加
+app.post('/numjian',require('./api/numadd'))  //数量减少
+app.post('/del',require('./api/del'))   //删除购物车内物品
+app.post('/sureordercol',require('./api/sureordercol')) //订单页的操作
+app.post('/payorder',require('./api/payorder'))
+
+
 
 app.use('/', indexRouter);	//主页
 // catch 404 and forward to error handler

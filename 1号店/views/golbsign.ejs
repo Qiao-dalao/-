@@ -123,8 +123,8 @@
 				        <span style="float:left;margin-left: 5px;margin-top:15px;color:#333;font-size:12px;cursor: pointer;">金币</span>
 				        <div class="yuanjia">
 				            <span style="text-decoration: line-through;color: #999999;font-size:10px;float:left;margin-left:10px;">￥<%= result[j].list[i].oldprice %></span>
-				            <div class="buy">
-				                <img width="50%" style="margin-top: 3px;" src="/images/han/shoppingcar.png" alt="">
+				            <div class="buy" idname="<%= result[j].list[i].id %>">
+				                <img width="50%" style="margin-top: 3px;"  src="/images/han/shoppingcar.png" alt="">
 				            </div>
 				        </div>
 				    </div>
@@ -153,13 +153,35 @@ for(var i=0;i<quanbu.length;i++){
 		this.style.fontWeight='bold'
 	}
 }
+
 var xiangqing = document.querySelectorAll('.xiangqing')
 for(var i=0;i<xiangqing.length;i++){
-xiangqing[i].onclick=function(){
-	location.href='/details/'+this.id
+	xiangqing[i].addEventListener('click',function(){
+		location.href='/details/'+this.id
+	},true)
+}
+var buy = document.querySelectorAll('.buy')
+for(var i=0;i<buy.length;i++){
+buy[i].addEventListener('click',function(){
 	
+	var str = document.cookie
+    var arr = str.split(';')
+    var boo = false
+    for (var i=0;i<arr.length;i++) {
+        arr[i] = arr[i].trim().split('=') 
+        if (arr[i][0] == '_id') {
+			location.href='/loginShopping/'+this.getAttribute('idname')
+			
+            boo=true
+        } 
+    }
+    if (!boo) {
+        location.href = '/notloginShopping'
+    }
+},true)
 }
-}
+
+
 </script>
 <% include base/copyright.ejs %>
 <% include base/foot.ejs %>

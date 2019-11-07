@@ -3,17 +3,23 @@
 <% include base/search-index.ejs %>
 <link rel="stylesheet" href="/stylesheets/details.css">
 <style>
+*{
+    margin: 0;
+    padding: 0;
+}
 a{
     text-decoration: none;
 }
-
+body{
+    background: white;
+}
 #box-l{
     width: 400px;
     height: 400px;
     border:1px solid #DDDDDD;
     background:url(<%= good[0].img %>);
     float:left;
-    margin-top: 100px;
+    
     position:relative;
     background-size: 100%;
     display:flex;
@@ -30,6 +36,22 @@ a{
     left:420px;
     top:0px;
     display:none;
+}
+.bigbox{
+    margin-top: 20px;
+    height: 400px;
+}
+.box-r{
+    margin-top: 0px;
+    border:none;
+    border-bottom: 1px solid #D9D9D9;
+}
+.shopping{
+    margin: 0;
+    margin-top: 25px;
+}
+.box-r-b{
+    border: none;
 }
 </style>
 <div class="line"></div>
@@ -48,42 +70,35 @@ a{
             <div class="qianggou">抢购价</div>
             <div class="price">￥<%= good[0].price %></div>
         </div>
-        <div class="good">
-            <img class="dianzan" style="margin-left:60px;" src="/images/han/点赞.png" alt="">
-            <span class="haoping">好评率</span>
-            <span class="baifenbai">100%</span>
-            <span class="pinglun">[评论0条]</span>
-        </div>
-        <div class="youhui">
+        <!-- <div class="youhui">
             <span class="quan">优惠券</span>
             <img class="manjian" src="/images/han/满减.png" alt="">
             <span class="lingqu">领取优惠券&nbsp;&nbsp;<i class="fa fa-angle-down"></i></span>
-        </div>
+        </div> -->
         <div class="xuanze">
             <div class="first clear" >
-                <span class="yanse">选择颜色:</span>
+                <span class="yanse">选择具体:</span>
                 <div class="yifu">
-                    <img style="width: 30px;height: 30px;margin-top:7px;float:left" src="/images/han/1.jpg" alt="">
-                    <span style="color:#333;font-size:12px;float:left;margin-left: 10px;">黑色A80032 A224589 A008</span>
+                    <img style="width: 30px;height: 30px;margin-top:7px;float:left" src="<%= good[0].img %>" alt="">
+                    <span style="color:#333;font-size:12px;float:left;margin-left: 10px;width: 160px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;"><%= good[0].miaoshu %></span>
                 </div>
             </div>
-            <div class="second clear">
+            <!-- <div class="second clear">
                 <span class="chima clear">选择尺码：</span>
-                <div class="small clear">S</div>
-                <div class="mall clear" style="border:1px solid #FF875A">M</div>
-                <div class="light clear">L</div>
-            </div>    
+                <div class="small clear size">S</div>
+                <div class="mall clear size" style="border:1px solid #FF875A" >M</div>
+                <div class="light clear size">L</div>
+            </div>     -->
             <div class="box-r-b">
-                <span class="songhuo clear">送货至<input type="text"></span>
+                <!-- <span class="songhuo clear">送货至<input type="text"></span>
                 
-                <span class="jianshu clear">有货,&nbsp;&nbsp;仅剩一件,&nbsp;&nbsp;免运费</span>
-                <p class="text clear">
-                    由 尚上奢侈品专营店 从 上海 发货, 并提供售后服务. 现在至明日15:00前完成下单，预计10月23日23:00前发货，10月24日24:00前送达   
-                </p>
+                <span class="jianshu clear">有货,&nbsp;&nbsp;仅剩一件,&nbsp;&nbsp;免运费</span> -->
+                
                 <div class="shopping clear">
                     <img class="clear" style="width: 15%;float:left;margin-left: 20px;margin-top: 15px;" src="/images/han/shoppingcar.png" alt="">
                     <span class="add">加入购物车</span>
                 </div>
+                <p class="baozhang">由上海发货, 并提供售后服务.现在至明日15:00前完成下单，预计23:00前发货，明日24:00前送达</p> <br /><br />
                 <p class="baozhang">保障&nbsp;&nbsp;&nbsp;&nbsp;支持七天无理由退货</p>
             </div>
         </div>
@@ -91,92 +106,76 @@ a{
     
 </div>
 <script>
-    //放大镜
-    var boxl=document.getElementById('box-l');
-    var square=document.getElementById('square');
-    var search=document.getElementById("search");
-    //鼠标移入small时显示search和big
-    boxl.onmouseover=function(){
-        square.style.display="block";
-        search.style.display="block";
-    }
-    //鼠标移出small时隐藏search和big
-    boxl.onmouseout=function(){
-        square.style.display="none";
-        search.style.display="none";
-    }
-    boxl.onmousemove=function(e){
-    var evt=event||arguments[0];
-    //获取当前鼠标坐标
-    var x=e.clientX-boxl.offsetLeft-search.offsetWidth/2;
-    var y=e.clientY-boxl.offsetTop-search.offsetHeight/2;
-    //判断当前位置search显示框不能移出small框
-        if(x<0){
-            search.style.left=0+"px";
-        }else if(x>=boxl.offsetWidth-search.offsetWidth){
-            search.style.left=boxl.offsetWidth-search.offsetWidth+"px";
-        }else{
-            search.style.left=x+"px";
-            
-        }
-        if(y<0){
-            search.style.top=0+"px";
-        }else if(y>=boxl.offsetHeight-search.offsetHeight){
-            search.style.top=boxl.offsetHeight-search.offsetHeight+"px";
-        }else{
-            search.style.top=y+"px";
-            console.log(y,'y')
-        }
-        //计算放大比例，这个比例是大图片和小图片的比例
-        var w=500/400;
-        //显示放大区域
-        square.style.backgroundPosition=(-search.offsetLeft)*w+"px"+" "+(-search.offsetTop)*w+"px";
-    }
-
-
-    // var biankuang=document.getElementsByClassName('biankuang')
-    // var tupian=document.getElementsByClassName('tupian')
-    // var prev=document.getElementsByClassName('prev')[0]
-    // var next=document.getElementsByClassName('next')[0]
-    // var num=0;
-    // for (var i=0;i<tupian.length;i++){
-    //     quanbu[i].index=i
-    // }
-
-
-    // prev.onclick=function(){
-    //     tupian[num].style.display='inline-block'
-    //     biankuang[num].style.border='2px solid #999'
-    //     liElems[num].style.background='#fff'
-    //     num--
-    //     if(num<0){
-    //         num=tupian.length-1    
-    //     }
-    //     biankuang[num].style.border='none'
-    //     tupian[num].style.display='inline-block'
-    //     liElems[num].style.background='red'
-    // }
-
-    // next.onclick=function(){
-    //     tupian[num].style.display='inline-block'
-    //     biankuang[num].style.border='2px solid #999'
-    //     liElems[num].style.background='#fff'
-    //     num++
-    //     if(num>5){
-    //         num=0
-    //     }
-    //     biankuang[num].style.border='none'
-    //     tupian[num].style.display='inline-block'
-    //     liElems[num].style.background='red'
-    // }
     
-
-        // function imgClick(img){
-        //     $("#imgShow").attr("src",img.src);
-        //     $("#bigImgBox").css("display","block");
-        // }
-        // $(".span").on("click",function(){
-        //     $("#bigImgBox").css("display","none");
-        // })
+        
+        
+        //放大镜
+        var boxl=document.getElementById('box-l');
+        var square=document.getElementById('square');
+        var search=document.getElementById("search");
+        //鼠标移入small时显示search和big
+        boxl.onmouseover=function(){
+            square.style.display="block";
+            search.style.display="block";
+        }
+        //鼠标移出small时隐藏search和big
+        boxl.onmouseout=function(){
+            square.style.display="none";
+            search.style.display="none";
+        }
+        boxl.onmousemove=function(e){
+        var evt=event||arguments[0];
+        //获取当前鼠标坐标
+        var x=e.clientX-boxl.offsetLeft-search.offsetWidth/2;
+        var y=e.clientY-boxl.offsetTop-search.offsetHeight/2;
+        //判断当前位置search显示框不能移出small框
+            if(x<0){
+                search.style.left=0+"px";
+            }else if(x>=boxl.offsetWidth-search.offsetWidth){
+                search.style.left=boxl.offsetWidth-search.offsetWidth+"px";
+            }else{
+                search.style.left=x+"px";
+                
+            }
+            if(y<0){
+                search.style.top=0+"px";
+            }else if(y>=boxl.offsetHeight-search.offsetHeight){
+                search.style.top=boxl.offsetHeight-search.offsetHeight+"px";
+            }else{
+                search.style.top=y+"px";
+                console.log(y,'y')
+            }
+            //计算放大比例，这个比例是大图片和小图片的比例
+            var w=500/400;
+            //显示放大区域
+            square.style.backgroundPosition=(-search.offsetLeft)*w+"px"+" "+(-search.offsetTop)*w+"px";
+        }
+    
+   var size = document.querySelectorAll('.size')
+   for(var i=0;i<size.length;i++){
+        size[i].onclick=function(){
+            for(var j = 0;j<size.length;j++){
+                size[j].style.border='1px solid black'
+            }
+            this.style.border='1px solid #ff875a'
+        }
+   }
+        var add = document.querySelector('.add')
+    add.onclick=function(){
+        var str = document.cookie
+        var arr = str.split(';')
+        var boo = false
+        for (var i=0;i<arr.length;i++) {
+            arr[i] = arr[i].trim().split('=') 
+            if (arr[i][0] == '_id') {
+                var user = JSON.parse(unescape(arr[i][1]))
+                console.log(user)
+                boo=true
+            } 
+        }
+        if (!boo) {
+            location.href = '/login'
+        }
+    }
 </script>
 <% include base/foot.ejs%> 
